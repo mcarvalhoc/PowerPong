@@ -8,14 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlacarTime extends Actor
 {
-    
+    public int valor = 20;
+
     /**
      * Act - do whatever the PlacarTime wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        atualizaImagem(0);
+        atualizaImagem(valor);
+        valor -= 1;
+        if(valor == -1){
+            Greenfoot.stop();
+        }
+        
+        
+
     }    
 
     private void atualizaImagem(int valor){
@@ -24,10 +32,10 @@ public class PlacarTime extends Actor
     }
 
     public PlacarTime(){
-        atualizaImagem(0);
+        atualizaImagem(valor);
     }
 
     private String converteNumero(int valor){
         return String.format("%02d", valor);
-    }   
+    }  
 }

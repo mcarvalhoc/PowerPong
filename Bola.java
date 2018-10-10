@@ -21,6 +21,7 @@ public class Bola extends Actor
      */
     public void act()
     {
+        
         andarFrente();
         if (this.possoAndarParaDireita) {
             andarFrente();
