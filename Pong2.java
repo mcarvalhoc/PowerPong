@@ -30,15 +30,15 @@ public class Pong2 extends Actor
     }
 
     public void possoAndarParaCima(){
-        Actor Parede = getOneIntersectingObject(BarraLateral.class);
-        if(Parede==null){
+        Actor barralateral = getOneIntersectingObject(BarraLateral.class);
+        if(barralateral==null){
             andarParaCima();
         }
     }
 
     public void possoAndarParaBaixo(){
-        Actor Parede2 = getOneIntersectingObject(BarraLateral.class);
-        if(Parede2==null){
+        Actor barralateral2 = getOneIntersectingObject(BarraLateral2.class);
+        if(barralateral2==null){
             andarParaBaixo();
         }
     }

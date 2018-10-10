@@ -29,15 +29,16 @@ public class Pong extends Actor
     }
 
     public void possoAndarParaCima(){
-        Actor Parede = getOneIntersectingObject(BarraLateral.class);
-        if(Parede==null){
+        //BarraLateral barralateral = (BarraLateral)getOneIntersectingObject(BarraLateral.class);
+       // if(barralateral==null||getY()<324){
+        if(getY() > 67){     
             andarParaCima();
         }
     }
 
     public void possoAndarParaBaixo(){
-        Actor Parede2 = getOneIntersectingObject(BarraLateral.class);
-        if(Parede2==null){
+        Actor barralateral2 = getOneIntersectingObject(BarraLateral2.class);
+        if(barralateral2==null){
             andarParaBaixo();
         }
     }
