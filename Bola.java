@@ -14,16 +14,10 @@ public class Bola extends Actor
      */
     public void act()
     {
-<<<<<<< HEAD
-        
-        andarFrente();
-        if (this.possoAndarParaDireita) {
-            andarFrente();
-=======
+
         setLocation(getX()+hSpeed, getY()+vSpeed);
         if(getX()<5){
             hSpeed=-hSpeed;
->>>>>>> 6edbdf337d9352d327c84b4d8538c8598b7eaf86
         }
         if(getY()<5){
             vSpeed=-vSpeed;

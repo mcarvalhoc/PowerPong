@@ -17,10 +17,7 @@ public class PlacarTime extends Actor
     public void act() 
     {
         atualizaImagem(valor);
-        valor -= 1;
-        if(valor == -1){
-            Greenfoot.stop();
-        }
+       
         
         
 

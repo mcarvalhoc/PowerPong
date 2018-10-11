@@ -4,6 +4,7 @@ class.MyWorld.image=Background.png
 class.Score.image=Score.png
 class.Time.image=Time.png
 dependency1.from=MyWorld
+<<<<<<< HEAD
 dependency1.to=PlacarPong1
 dependency1.type=UsesDependency
 dependency10.from=MyWorld
@@ -17,6 +18,21 @@ dependency12.to=PlacarMatch
 dependency12.type=UsesDependency
 dependency13.from=MyWorld
 dependency13.to=PlacarTime
+=======
+dependency1.to=BarraLateral
+dependency1.type=UsesDependency
+dependency10.from=MyWorld
+dependency10.to=PlacarMatch
+dependency10.type=UsesDependency
+dependency11.from=MyWorld
+dependency11.to=PlacarTime
+dependency11.type=UsesDependency
+dependency12.from=MyWorld
+dependency12.to=Pong
+dependency12.type=UsesDependency
+dependency13.from=MyWorld
+dependency13.to=Pong2
+>>>>>>> upstream
 dependency13.type=UsesDependency
 dependency14.from=Pong2
 dependency14.to=BarraLateral
@@ -24,6 +40,7 @@ dependency14.type=UsesDependency
 dependency15.from=Pong2
 dependency15.to=BarraLateral2
 dependency15.type=UsesDependency
+<<<<<<< HEAD
 dependency16.from=Bola
 dependency16.to=MyWorld
 dependency16.type=UsesDependency
@@ -53,13 +70,45 @@ dependency8.to=BarraCentral
 dependency8.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=Pong2
+=======
+dependency16.from=Pong
+dependency16.to=BarraLateral2
+dependency16.type=UsesDependency
+dependency2.from=MyWorld
+dependency2.to=BarraLateral2
+dependency2.type=UsesDependency
+dependency3.from=MyWorld
+dependency3.to=Score
+dependency3.type=UsesDependency
+dependency4.from=MyWorld
+dependency4.to=Time
+dependency4.type=UsesDependency
+dependency5.from=MyWorld
+dependency5.to=Match
+dependency5.type=UsesDependency
+dependency6.from=MyWorld
+dependency6.to=BarraCentral
+dependency6.type=UsesDependency
+dependency7.from=MyWorld
+dependency7.to=Bola
+dependency7.type=UsesDependency
+dependency8.from=MyWorld
+dependency8.to=PlacarPong1
+dependency8.type=UsesDependency
+dependency9.from=MyWorld
+dependency9.to=PlacarPong2
+>>>>>>> upstream
 dependency9.type=UsesDependency
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=1017
+<<<<<<< HEAD
 package.numDependencies=17
+=======
+package.numDependencies=16
+>>>>>>> upstream
 package.numTargets=14
 project.charset=UTF-8
 publish.hasSource=false

@@ -67,13 +67,19 @@ public class MyWorld extends World
         addObject(placarTime,486,10);
         placarTime.setLocation(491,5);
         placarTime.setLocation(495,9);
+
     }
-    
-        public void acrescentaPontosUm(int valor){
+    public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
     
     public void acrescentaPontosDois(int valor){
         pontuacaoDois.addPontos(valor);
+        Pong pong = new Pong();
+        addObject(pong,13,185);
+        Pong2 pong2 = new Pong2();
+        addObject(pong2,682,195);
+        pong2.setLocation(689,189);
+
     }
 }
