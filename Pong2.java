@@ -19,6 +19,7 @@ public class Pong2 extends Actor
         possoAndarParaCima();
         possoAndarParaBaixo();
         ligarBoost();
+        rotacao();
 
     }
     public Pong2(){
@@ -46,15 +47,17 @@ public class Pong2 extends Actor
     public void andarParaCima(){
         if(Greenfoot.isKeyDown("up")) {
             setLocation(getX(), getY() - velocidade());
+             setRotation(0);
         }
     }   
 
     public void andarParaBaixo(){
         if(Greenfoot.isKeyDown("down")) {
             setLocation(getX(), getY() + velocidade());
+             setRotation(0);
         }
     }
-
+    
     public void ligarBoost(){
         if(Greenfoot.isKeyDown("0")){
             statusBoost = true;
@@ -96,5 +99,14 @@ public class Pong2 extends Actor
 
     public boolean getStatusBoost(){
         return this.statusBoost;
-    }    
+    } 
+    
+     public void rotacao(){
+        if(Greenfoot.isKeyDown("Left")){
+            setRotation(-45);
+        }
+        else if(Greenfoot.isKeyDown("Right")){
+         setRotation(45);
+        }
+    }
 }   

@@ -19,18 +19,21 @@ public class Pong extends Actor
         possoAndarParaCima();
         possoAndarParaBaixo();
         ligarBoost();
+        rotacao();
+       
     }
+   
     public Pong(){
         GreenfootImage img = new GreenfootImage(15, 78);
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
-        
+
     }
 
     public void possoAndarParaCima(){
         //BarraLateral barralateral = (BarraLateral)getOneIntersectingObject(BarraLateral.class);
-       // if(barralateral==null||getY()<324){
+        // if(barralateral==null||getY()<324){
         if(getY() > 67){     
             andarParaCima();
         }
@@ -46,19 +49,20 @@ public class Pong extends Actor
     public void andarParaCima(){
         if(Greenfoot.isKeyDown("w")) {
             setLocation(getX(), getY() - velocidade());
+            setRotation(0);
         }
     }   
 
     public void andarParaBaixo(){
         if(Greenfoot.isKeyDown("s")) {
             setLocation(getX(), getY() + velocidade());
+            setRotation(0);
         }
     }
-
+    
     public void ligarBoost(){
         if(Greenfoot.isKeyDown("e")){
             statusBoost = true;
-
         }
         controleBoost();
     }
@@ -97,5 +101,17 @@ public class Pong extends Actor
     public boolean getStatusBoost(){
         return this.statusBoost;
     }    
+    
+    public void rotacao(){
+        if(Greenfoot.isKeyDown("a")){
+            setRotation(-45);
+        }else if(Greenfoot.isKeyDown("d")){
+         setRotation(45);
+        }
+    }
+    
+    
+    
+
 }   
 
