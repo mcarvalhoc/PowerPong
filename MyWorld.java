@@ -8,8 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-     private PlacarPong1 pontuacaoUm;
-     private PlacarPong2 pontuacaoDois;
+    private PlacarPong1 pontuacaoUm;
+    private PlacarPong2 pontuacaoDois;
+    private int cicloAtual = 0; 
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,14 +21,16 @@ public class MyWorld extends World
         super(700, 390, 1); 
         prepare();
     }
-
+    public void act()
+    {    
+        cicloAtual++;
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
-
         BarraLateral barraLateral = new BarraLateral();
         addObject(barraLateral,350,22);
         BarraLateral2 barraLateral2 = new BarraLateral2();
@@ -67,8 +70,14 @@ public class MyWorld extends World
         addObject(placarTime,486,10);
         placarTime.setLocation(491,5);
         placarTime.setLocation(495,9);
-
+        go go = new go();
+        addObject(go,354,189);
     }
+    
+    public int cicloAtual(){
+        return cicloAtual;
+    }
+    
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
@@ -80,6 +89,5 @@ public class MyWorld extends World
         Pong2 pong2 = new Pong2();
         addObject(pong2,682,195);
         pong2.setLocation(689,189);
-
     }
 }

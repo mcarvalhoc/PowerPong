@@ -1,13 +1,12 @@
 import lang.stride.*;
 import greenfoot.*;
-
 /**
  * Write a description of class Bola here.
  * @author (your name) @version (a version number or a date)
  */
 public class Bola extends Actor
 {
-    public int speed = 1;
+    public int speed = 4;
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1
     /**
@@ -15,8 +14,11 @@ public class Bola extends Actor
      */
     public void act()
     {
-        movimentoBola();
-        changeDirection();
+        MyWorld mundo = (MyWorld) getWorld(); 
+        if(mundo.cicloAtual()>193){
+            movimentoBola();
+        }
+            changeDirection();
     }
 
     public void movimentoBola(){
