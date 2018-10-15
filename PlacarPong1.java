@@ -33,6 +33,6 @@ public class PlacarPong1 extends Actor
    }
    
    private String converteNumero(int valor){
-       return String.format("%04d",valor);
+       return String.format("%02d",valor);
     }
 }
