@@ -7,57 +7,66 @@ import greenfoot.*;
  */
 public class Bola extends Actor
 {
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-    private boolean possoGirar = true;
+    public int speed = 3;
+    public int hDirection = 1;//Direita:1 Esquerda:-1
+    public int vDirection = 1;//Cima:-1 Baixo=1
     /**
      * 
      */
     public void act()
     {
         movimentoBola();
-        tocarPad();
+        changeDirection();
+        somaPontoUm();
+        somaPontoDois();
     }
 
     public void movimentoBola(){
-        move(10);
-        if((isTouching(BarraLateral.class) || isAtEdge()) && this.possoGirar){
-            turn(160);
-            this.possoGirar = false;
-        }        
-        if(!isAtEdge() && !isTouching(BarraLateral.class) ){
-            this.possoGirar = true;
-        } 
-         if((isTouching(BarraLateral2.class) || isAtEdge()) && this.possoGirar){
-            turn(160);
-            this.possoGirar = false;
-        }        
-         if(!isAtEdge() && !isTouching(BarraLateral2.class) ){
-            this.possoGirar = true;
-        }
+        int newX = getX() + hDirection * speed;
+        int newY = getY() + vDirection * speed;
+        setLocation(newX,newY);
     }
 
-    public void tocarPad(){
-        Actor Pong = getOneIntersectingObject(Pong.class);
-        Actor Pong2 =  getOneIntersectingObject(Pong2.class);
-        if(Pong != null){
-            turn(190);
+    public void changeDirection(){
+        if(getX()>=getWorld().getWidth() - 5){
+            hDirection*=-1;
         }
-        else if(Pong2 != null){
-            turn(190);
+        if(getY()>=getWorld().getHeight() - 5){
+            vDirection*=-1;
+        }
+         if(getX() <= 5){
+            hDirection*=-1;
+        }
+        if(getY() <= 5){
+            vDirection*=-1;
+        }
+        if((getY() <= 30) && isTouching(BarraLateral.class)){
+            vDirection*=-1;
+        }
+        if((getY() <= 367) && isTouching(BarraLateral2.class)){
+            vDirection*=-1;
+        }
+        if((getX() <= 60) && isTouching(Pong.class)){
+            hDirection*= -1;
+        }
+        if((getY() <= 650) && isTouching(Pong2.class)){
+            hDirection*= - 1;
         }
     }
     
     public void somaPontoUm(){
-        if(getX()>= 599){
+        if(getX()>= 695){
             MyWorld World =(MyWorld) getWorld();
-            World.acrescentaPontosUm(10);
+            World.acrescentaPontosUm(1);
+            World.acrescentaPontosPartida(1);
         }
     }
 
     public void somaPontoDois(){
-        if(getX()<=1){
+        if(getX()<=5){
             MyWorld World = (MyWorld) getWorld();
-            World.acrescentaPontosDois(10);
+            World.acrescentaPontosDois(1);
+            World.acrescentaPontosPartida(1);
         }
     }
 
@@ -66,7 +75,6 @@ public class Bola extends Actor
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
-
     }
 }
 
