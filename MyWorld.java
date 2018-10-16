@@ -66,6 +66,10 @@ public class MyWorld extends World
         addObject(placartime, 518, 115);
         placartime.setLocation(495, 8);
         placartime.setLocation(497, 8);
+        BarraVelocidade barraVelocidade = new BarraVelocidade();
+        addObject(barraVelocidade,609,375);
+        barraVelocidade.setLocation(669,380);
+        barraVelocidade.setLocation(639,379);
     }
 
     /**

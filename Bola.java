@@ -19,6 +19,7 @@ public class Bola extends Actor
         changeDirection();
         somaPontoUm();
         somaPontoDois();
+        
     }
 
     public void movimentoBola(){
@@ -28,6 +29,8 @@ public class Bola extends Actor
     }
 
     public void changeDirection(){
+        Pong pong = (Pong)getOneIntersectingObject(Pong.class);
+        Pong2 pong2 = (Pong2)getOneIntersectingObject(Pong2.class);
         if(getX()>=getWorld().getWidth() - 5){
             hDirection*=-1;
         }
@@ -46,13 +49,14 @@ public class Bola extends Actor
         if((getY() <= 367) && isTouching(BarraLateral2.class)){
             vDirection*=-1;
         }
-        if((getX() <= 60) && isTouching(Pong.class)){
+        if((getX() <= 60) && pong != null){
             hDirection*= -1;
         }
-        if((getY() <= 650) && isTouching(Pong2.class)){
+        if((getY() <= 650) && pong2 != null){
             hDirection*= - 1;
         }
     }
+    
     
     public void somaPontoUm(){
         if(getX()>= 695){
