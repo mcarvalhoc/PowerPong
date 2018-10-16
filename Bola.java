@@ -54,9 +54,12 @@ public class Bola extends Actor
         }
     }
     
+    public void acabaJogo(){
+       // if(
+    }
     public void somaPontoUm(){
         if(getX()>= 695){
-            MyWorld World =(MyWorld) getWorld();
+            Jogo World =(Jogo) getWorld();
             World.acrescentaPontosUm(1);
             World.acrescentaPontosPartida(1);
         }
@@ -64,7 +67,7 @@ public class Bola extends Actor
 
     public void somaPontoDois(){
         if(getX()<=5){
-            MyWorld World = (MyWorld) getWorld();
+            Jogo World = (Jogo) getWorld();
             World.acrescentaPontosDois(1);
             World.acrescentaPontosPartida(1);
         }
@@ -76,5 +79,7 @@ public class Bola extends Actor
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
     }
+    
+    
 }
 

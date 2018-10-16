@@ -4,7 +4,7 @@ import greenfoot.*;
  * Write a description of class MyWorld here.
  * @author (your name) @version (a version number or a date)
  */
-public class MyWorld extends World
+public class Jogo extends World
 {
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private PlacarPong1 pontuacaoUm;
@@ -15,7 +15,7 @@ public class MyWorld extends World
     /**
      * Constructor for objects of class MyWorld.
      */
-    public MyWorld()
+    public Jogo()
     {
         super(700, 390, 1);
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
