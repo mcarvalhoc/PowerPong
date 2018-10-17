@@ -11,6 +11,8 @@ public class MyWorld extends World
     private PlacarPong2 pontuacaoDois;
     private PlacarMatch numeroPartidas;
     private Integer ciclo = 0;
+    private PlacarTime placartime;
+    
 
     /**
      * Constructor for objects of class MyWorld.
@@ -20,6 +22,12 @@ public class MyWorld extends World
         super(700, 390, 1);
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
+    }
+    
+    public boolean oTempoEstaZerado(){
+    
+        return this.placartime.valor == 2;
+    
     }
 
     /**
@@ -62,7 +70,7 @@ public class MyWorld extends World
         addObject(this.pontuacaoDois, 665, 9);
         this.numeroPartidas = new PlacarMatch();
         addObject(this.numeroPartidas,259,9);
-        PlacarTime placartime =  new  PlacarTime();
+        this.placartime =  new  PlacarTime();
         addObject(placartime, 518, 115);
         placartime.setLocation(495, 8);
         placartime.setLocation(497, 8);
