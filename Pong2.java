@@ -66,16 +66,16 @@ public class Pong2 extends Actor
         controleBoost();
     }
 
-    public void controleBoost(){
-        if(getStatusBoost()){
-            //1 segundo dura em media 60 ciclos;
-            if(getTimerBoost() <= 200){
-                setTimerBoost(getTimerBoost() + 1);
-            }else{
-                statusBoost = false;
-            }
-        }  
-    }
+        public void controleBoost(){
+            if(getStatusBoost()){
+                //1 segundo dura em media 60 ciclos;
+                if(getTimerBoost() <= 200){
+                    setTimerBoost(getTimerBoost() + 1);
+                }else{
+                    statusBoost = false;
+                }
+            }  
+        }
 
     public int velocidade(){
         if(getStatusBoost()){
