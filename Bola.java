@@ -15,6 +15,7 @@ public class Bola extends Actor
      */
     public void act()
     {
+        speedUp();
         movimentoBola();
         changeDirection();
         somaPontoUm();
@@ -73,7 +74,14 @@ public class Bola extends Actor
             World.acrescentaPontosPartida(1);
         }
     }
-
+    
+    public void speedUp(){        
+            MyWorld mundo = getWorldOfType(MyWorld.class);           
+           if (mundo.oTempoEstaZerado()){
+                this.speed = this.speed+1;
+            }                 
+    }
+   
     public  Bola(){
         GreenfootImage img = new GreenfootImage(18, 17);
         img.setColor(Color.WHITE);
