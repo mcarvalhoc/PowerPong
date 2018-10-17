@@ -19,7 +19,6 @@ public class Bola extends Actor
             movimentoBola();
         }
         speedUp();
-        movimentoBola();
         changeDirection();
         somaPontoUm();
         somaPontoDois();        
