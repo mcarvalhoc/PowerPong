@@ -1,0 +1,3050 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x668a516b, pid=4852, tid=0x0000169c
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_181-b13) (build 1.8.0_181-b13)
+# Java VM: Java HotSpot(TM) Client VM (25.181-b13 mixed mode windows-x86 )
+# Problematic frame:
+# C  [t2k.dll+0x1516b]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x183a6400):  JavaThread "SimulationThread" [_thread_in_native, id=5788, stack(0x21620000,0x21670000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000012d
+
+Registers:
+EAX=0x17724c60, EBX=0x00000001, ECX=0x00000000, EDX=0x21627e48
+ESP=0x21627d68, EBP=0x21627d8c, ESI=0x20f2eb28, EDI=0x00000001
+EIP=0x668a516b, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x21627d68)
+0x21627d68:   00000000 20f2eb28 0000000b 00000000
+0x21627d78:   00000021 20efe290 00000000 18269c08
+0x21627d88:   2e82e5e2 21627dd8 668a54f2 183a6540
+0x21627d98:   21627e48 17724c60 20f2eb28 00000000
+0x21627da8:   0000000b 183a6400 03478ce0 03478ce0
+0x21627db8:   05043af8 18129da8 00000000 183a6400
+0x21627dc8:   00000000 00000003 51756fba 00000000
+0x21627dd8:   21627e24 051641c9 183a6540 21627e4c 
+
+Instructions: (pc=0x668a516b)
+0x668a514b:   10 8b 55 0c 56 8b 75 14 33 c9 89 50 10 57 8b 78
+0x668a515b:   08 89 4d e8 38 4e 38 74 06 8d 46 10 50 eb 01 51
+0x668a516b:   ff b7 2c 01 00 00 e8 54 13 01 00 8b 06 89 45 ec
+0x668a517b:   8b 46 04 89 45 f0 8b 46 08 89 45 f4 8b 46 0c 59 
+
+
+Register to memory mapping:
+
+EAX=0x17724c60 is an unknown value
+EBX=0x00000001 is an unknown value
+ECX=0x00000000 is an unknown value
+EDX=0x21627e48 is pointing into the stack for thread: 0x183a6400
+ESP=0x21627d68 is pointing into the stack for thread: 0x183a6400
+EBP=0x21627d8c is pointing into the stack for thread: 0x183a6400
+ESI=0x20f2eb28 is an unknown value
+EDI=0x00000001 is an unknown value
+
+
+Stack: [0x21620000,0x21670000],  sp=0x21627d68,  free space=31k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [t2k.dll+0x1516b]
+C  [t2k.dll+0x154f2]
+j  sun.font.T2KFontScaler.getGlyphImageNative(Lsun/font/Font2D;JJI)J+0
+j  sun.font.T2KFontScaler.getGlyphImage(JI)J+26
+J 465 C1 sun.font.FileFontStrike.getGlyphImagePtr(I)J (126 bytes) @ 0x052b3054 [0x052b2b30+0x524]
+J 464 C1 sun.font.FileFontStrike.getGlyphMetrics(IZ)Ljava/awt/geom/Point2D$Float; (277 bytes) @ 0x052b0f1c [0x052b0e70+0xac]
+J 463 C1 sun.font.FileFontStrike.getGlyphMetrics(I)Ljava/awt/geom/Point2D$Float; (7 bytes) @ 0x052b0b78 [0x052b0b40+0x38]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x15c065]
+V  [jvm.dll+0x223ade]
+V  [jvm.dll+0x15c0fe]
+V  [jvm.dll+0xddbfb]
+V  [jvm.dll+0xdf5ec]
+C  [fontmanager.dll+0x696e]
+C  0x21628690
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.font.T2KFontScaler.getGlyphImageNative(Lsun/font/Font2D;JJI)J+0
+j  sun.font.T2KFontScaler.getGlyphImage(JI)J+26
+J 465 C1 sun.font.FileFontStrike.getGlyphImagePtr(I)J (126 bytes) @ 0x052b3054 [0x052b2b30+0x524]
+J 464 C1 sun.font.FileFontStrike.getGlyphMetrics(IZ)Ljava/awt/geom/Point2D$Float; (277 bytes) @ 0x052b0f1c [0x052b0e70+0xac]
+J 463 C1 sun.font.FileFontStrike.getGlyphMetrics(I)Ljava/awt/geom/Point2D$Float; (7 bytes) @ 0x052b0b78 [0x052b0b40+0x38]
+v  ~StubRoutines::call_stub
+J 967  sun.font.SunLayoutEngine.nativeLayout(Lsun/font/Font2D;Lsun/font/FontStrike;[FII[CIIIIIIILjava/awt/geom/Point2D$Float;Lsun/font/GlyphLayout$GVData;JJ)V (0 bytes) @ 0x0532d93a [0x0532d820+0x11a]
+J 958 C1 sun.font.SunLayoutEngine.layout(Lsun/font/FontStrikeDesc;[FIILsun/font/TextRecord;ILjava/awt/geom/Point2D$Float;Lsun/font/GlyphLayout$GVData;)V (88 bytes) @ 0x05360ee0 [0x05360d70+0x170]
+J 951 C1 sun.font.GlyphLayout$EngineRecord.layout()V (101 bytes) @ 0x05360020 [0x0535ff50+0xd0]
+J 528 C1 sun.font.GlyphLayout.layout(Ljava/awt/Font;Ljava/awt/font/FontRenderContext;[CIIILsun/font/StandardGlyphVector;)Lsun/font/StandardGlyphVector; (688 bytes) @ 0x052c0eb4 [0x052c0600+0x8b4]
+J 935 C1 sun.font.ExtendedTextSourceLabel.createGV()Lsun/font/StandardGlyphVector; (79 bytes) @ 0x0535b104 [0x0535b020+0xe4]
+J 933 C1 sun.font.ExtendedTextSourceLabel.getAdvance()F (24 bytes) @ 0x0535aa20 [0x0535a9e0+0x40]
+J 626 C1 java.awt.font.TextLine.init()V (1056 bytes) @ 0x052e9ae8 [0x052e92d0+0x818]
+J 927 C1 java.awt.font.TextLine.<init>(Ljava/awt/font/FontRenderContext;[Lsun/font/TextLineComponent;[F[CII[I[BZ)V (83 bytes) @ 0x053598e0 [0x053597e0+0x100]
+J 439 C1 java.awt.font.TextLine.fastCreateTextLine(Ljava/awt/font/FontRenderContext;[CLjava/awt/Font;Lsun/font/CoreMetrics;Ljava/util/Map;)Ljava/awt/font/TextLine; (341 bytes) @ 0x052a6b0c [0x052a6360+0x7ac]
+J 907 C1 java.awt.font.TextLayout.fastInit([CLjava/awt/Font;Ljava/util/Map;Ljava/awt/font/FontRenderContext;)V (90 bytes) @ 0x05351ca4 [0x05351ba0+0x104]
+J 905 C1 java.awt.font.TextLayout.<init>(Ljava/lang/String;Ljava/awt/Font;Ljava/awt/font/FontRenderContext;)V (180 bytes) @ 0x053512c4 [0x053510c0+0x204]
+J 621 C1 greenfoot.util.GraphicsUtilities.getMultiLineStringDimensions([Ljava/lang/String;ID)Lgreenfoot/util/GraphicsUtilities$MultiLineStringDimensions; (294 bytes) @ 0x052e63a8 [0x052e58d0+0xad8]
+J 894 C1 greenfoot.GreenfootImage.<init>(Ljava/lang/String;ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)V (131 bytes) @ 0x0534a6c0 [0x0534a5d0+0xf0]
+J 893 C1 greenfoot.GreenfootImage.<init>(Ljava/lang/String;ILgreenfoot/Color;Lgreenfoot/Color;Lgreenfoot/Color;)V (47 bytes) @ 0x0534a230 [0x0534a190+0xa0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374bfc [0x05374820+0x3dc]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+J 1030 C1 PlacarTime.atualizaImagem(I)V (38 bytes) @ 0x05374c10 [0x05374820+0x3f0]
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.atualizaImagem(I)V+34
+j  PlacarTime.<init>()V+16
+j  MyWorld.prepare()V+354
+j  MyWorld.<init>()V+25
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+85
+j  sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+5
+j  java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+79
+j  greenfoot.core.Simulation.newInstance(Ljava/lang/reflect/Constructor;)Ljava/lang/Object;+5
+j  greenfoot.platforms.ide.WorldHandlerDelegateIDE.lambda$instantiateNewWorld$0(Ljava/lang/Class;Ljava/lang/Runnable;)V+16
+j  greenfoot.platforms.ide.WorldHandlerDelegateIDE$$Lambda$62.run()V+12
+j  greenfoot.core.Simulation.runQueuedTasks()V+39
+j  greenfoot.core.Simulation.maybePause()V+8
+j  greenfoot.core.Simulation.runContent()V+8
+j  greenfoot.core.Simulation.run()V+1
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x183a6400 JavaThread "SimulationThread" [_thread_in_native, id=5788, stack(0x21620000,0x21670000)]
+  0x183a4400 JavaThread "Thread-9" daemon [_thread_in_native, id=6868, stack(0x18840000,0x18890000)]
+  0x183a4800 JavaThread "Thread-7" [_thread_in_native, id=13644, stack(0x20d90000,0x20de0000)]
+  0x18363000 JavaThread "JavaFX Application Thread" [_thread_in_native, id=2820, stack(0x19240000,0x19290000)]
+  0x1835d400 JavaThread "Thread-6" daemon [_thread_blocked, id=8380, stack(0x191b0000,0x19200000)]
+  0x1835bc00 JavaThread "QuantumRenderer-0" daemon [_thread_blocked, id=14108, stack(0x19020000,0x19070000)]
+  0x1827b800 JavaThread "main" [_thread_blocked, id=10128, stack(0x18a00000,0x18a50000)]
+  0x0504d400 JavaThread "DestroyJavaVM" [_thread_blocked, id=11880, stack(0x04f70000,0x04fc0000)]
+  0x18131800 JavaThread "BlueJ worker thread" [_thread_blocked, id=7120, stack(0x188d0000,0x18920000)]
+  0x18128400 JavaThread "AWT-Windows" daemon [_thread_in_native, id=10716, stack(0x186e0000,0x18730000)]
+  0x1815ac00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=12832, stack(0x185c0000,0x18610000)]
+  0x1772ec00 JavaThread "Service Thread" daemon [_thread_blocked, id=13128, stack(0x17fa0000,0x17ff0000)]
+  0x1770a800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=5248, stack(0x17f10000,0x17f60000)]
+  0x17704000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=10940, stack(0x17e80000,0x17ed0000)]
+  0x176f7000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=9468, stack(0x17df0000,0x17e40000)]
+  0x176f6400 JavaThread "JDWP Transport Listener: dt_shmem" daemon [_thread_blocked, id=7768, stack(0x17d60000,0x17db0000)]
+  0x176fa400 JavaThread "Attach Listener" daemon [_thread_blocked, id=10064, stack(0x17cd0000,0x17d20000)]
+  0x176f8000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6376, stack(0x17c40000,0x17c90000)]
+  0x176dc800 JavaThread "Finalizer" daemon [_thread_blocked, id=7656, stack(0x17a20000,0x17a70000)]
+  0x176c6800 JavaThread "Reference Handler" daemon [_thread_blocked, id=10256, stack(0x17990000,0x179e0000)]
+
+Other Threads:
+  0x176c0400 VMThread [stack: 0x17900000,0x17950000] [id=4468]
+  0x17739800 WatcherThread [stack: 0x18030000,0x18080000] [id=6764]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 7936K, used 3662K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K,  40% used [0x07200000, 0x074c7430, 0x078f0000)
+  from space 832K,  98% used [0x078f0000, 0x079bc6c8, 0x079c0000)
+  to   space 832K,   0% used [0x079c0000, 0x079c0000, 0x07a90000)
+ tenured generation   total 17440K, used 14402K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  82% used [0x0c750000, 0x0d560b80, 0x0d560c00, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+
+Card table byte_map: [0x07150000,0x071e0000] byte_map_base: 0x07117000
+
+Polling page: 0x03710000
+
+CodeCache: size=32768Kb used=2199Kb max_used=2199Kb free=30568Kb
+ bounds [0x05150000, 0x05378000, 0x07150000]
+ total_blobs=1307 nmethods=1027 adapters=218
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 537.843 Thread 0x1770a800 1027   !         sun.font.GlyphLayout$SDCache$SDKey::equals (53 bytes)
+Event: 537.843 Thread 0x1770a800 nmethod 1027 0x05373bc8 code [0x05373ce0, 0x05373e58]
+Event: 537.843 Thread 0x1770a800 1028   !         sun.font.GlyphLayout$LayoutEngineKey::equals (63 bytes)
+Event: 537.843 Thread 0x1770a800 nmethod 1028 0x05374008 code [0x05374110, 0x0537428c]
+Event: 537.843 Thread 0x1770a800 1029             sun.font.PhysicalFont::equals (38 bytes)
+Event: 537.844 Thread 0x1770a800 nmethod 1029 0x05374388 code [0x05374490, 0x053745ac]
+Event: 537.844 Thread 0x1770a800 1030             PlacarTime::atualizaImagem (38 bytes)
+Event: 537.844 Thread 0x1770a800 nmethod 1030 0x05374688 code [0x05374820, 0x05374d8c]
+Event: 537.844 Thread 0x1770a800 1031             PlacarTime::converteNumero (17 bytes)
+Event: 537.844 Thread 0x1770a800 nmethod 1031 0x05375488 code [0x053755f0, 0x05375a1c]
+
+GC Heap History (10 events):
+Event: 537.861 GC heap before
+{Heap before GC invocations=18 (full 2):
+ def new generation   total 7936K, used 7909K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K, 100% used [0x07200000, 0x078f0000, 0x078f0000)
+  from space 832K,  96% used [0x079c0000, 0x07a89618, 0x07a90000)
+  to   space 832K,   0% used [0x078f0000, 0x078f0000, 0x079c0000)
+ tenured generation   total 17440K, used 10463K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  59% used [0x0c750000, 0x0d187d58, 0x0d187e00, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+Event: 537.863 GC heap after
+Heap after GC invocations=19 (full 2):
+ def new generation   total 7936K, used 808K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K,   0% used [0x07200000, 0x07200000, 0x078f0000)
+  from space 832K,  97% used [0x078f0000, 0x079ba1c0, 0x079c0000)
+  to   space 832K,   0% used [0x079c0000, 0x079c0000, 0x07a90000)
+ tenured generation   total 17440K, used 11235K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  64% used [0x0c750000, 0x0d248de8, 0x0d248e00, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+}
+Event: 537.908 GC heap before
+{Heap before GC invocations=19 (full 2):
+ def new generation   total 7936K, used 7912K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K, 100% used [0x07200000, 0x078f0000, 0x078f0000)
+  from space 832K,  97% used [0x078f0000, 0x079ba1c0, 0x079c0000)
+  to   space 832K,   0% used [0x079c0000, 0x079c0000, 0x07a90000)
+ tenured generation   total 17440K, used 11235K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  64% used [0x0c750000, 0x0d248de8, 0x0d248e00, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+Event: 537.910 GC heap after
+Heap after GC invocations=20 (full 2):
+ def new generation   total 7936K, used 832K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K,   0% used [0x07200000, 0x07200000, 0x078f0000)
+  from space 832K, 100% used [0x079c0000, 0x07a90000, 0x07a90000)
+  to   space 832K,   0% used [0x078f0000, 0x078f0000, 0x079c0000)
+ tenured generation   total 17440K, used 12017K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  68% used [0x0c750000, 0x0d30c4f8, 0x0d30c600, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+}
+Event: 537.956 GC heap before
+{Heap before GC invocations=20 (full 2):
+ def new generation   total 7936K, used 7936K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K, 100% used [0x07200000, 0x078f0000, 0x078f0000)
+  from space 832K, 100% used [0x079c0000, 0x07a90000, 0x07a90000)
+  to   space 832K,   0% used [0x078f0000, 0x078f0000, 0x079c0000)
+ tenured generation   total 17440K, used 12017K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  68% used [0x0c750000, 0x0d30c4f8, 0x0d30c600, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+Event: 537.957 GC heap after
+Heap after GC invocations=21 (full 2):
+ def new generation   total 7936K, used 818K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K,   0% used [0x07200000, 0x07200000, 0x078f0000)
+  from space 832K,  98% used [0x078f0000, 0x079bcad0, 0x079c0000)
+  to   space 832K,   0% used [0x079c0000, 0x079c0000, 0x07a90000)
+ tenured generation   total 17440K, used 12833K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  73% used [0x0c750000, 0x0d3d84c0, 0x0d3d8600, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+}
+Event: 538.003 GC heap before
+{Heap before GC invocations=21 (full 2):
+ def new generation   total 7936K, used 7922K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K, 100% used [0x07200000, 0x078f0000, 0x078f0000)
+  from space 832K,  98% used [0x078f0000, 0x079bcad0, 0x079c0000)
+  to   space 832K,   0% used [0x079c0000, 0x079c0000, 0x07a90000)
+ tenured generation   total 17440K, used 12833K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  73% used [0x0c750000, 0x0d3d84c0, 0x0d3d8600, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+Event: 538.004 GC heap after
+Heap after GC invocations=22 (full 2):
+ def new generation   total 7936K, used 818K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K,   0% used [0x07200000, 0x07200000, 0x078f0000)
+  from space 832K,  98% used [0x079c0000, 0x07a8ca90, 0x07a90000)
+  to   space 832K,   0% used [0x078f0000, 0x078f0000, 0x079c0000)
+ tenured generation   total 17440K, used 13618K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  78% used [0x0c750000, 0x0d49c820, 0x0d49ca00, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+}
+Event: 538.050 GC heap before
+{Heap before GC invocations=22 (full 2):
+ def new generation   total 7936K, used 7922K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K, 100% used [0x07200000, 0x078f0000, 0x078f0000)
+  from space 832K,  98% used [0x079c0000, 0x07a8ca90, 0x07a90000)
+  to   space 832K,   0% used [0x078f0000, 0x078f0000, 0x079c0000)
+ tenured generation   total 17440K, used 13618K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  78% used [0x0c750000, 0x0d49c820, 0x0d49ca00, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+Event: 538.052 GC heap after
+Heap after GC invocations=23 (full 2):
+ def new generation   total 7936K, used 817K [0x07200000, 0x07a90000, 0x0c750000)
+  eden space 7104K,   0% used [0x07200000, 0x07200000, 0x078f0000)
+  from space 832K,  98% used [0x078f0000, 0x079bc6c8, 0x079c0000)
+  to   space 832K,   0% used [0x079c0000, 0x079c0000, 0x07a90000)
+ tenured generation   total 17440K, used 14402K [0x0c750000, 0x0d858000, 0x17200000)
+   the space 17440K,  82% used [0x0c750000, 0x0d560b80, 0x0d560c00, 0x0d858000)
+ Metaspace       used 8039K, capacity 8322K, committed 8448K, reserved 8576K
+}
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.986 Thread 0x1827b000 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x07320400) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.986 Thread 0x1827b000 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x07326c80) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.986 Thread 0x1827b000 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x0732cb10) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.174 Thread 0x1827b000 Exception <a 'java/io/FileNotFoundException'> (0x073d8b30) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.369 Thread 0x1830cc00 Exception <a 'java/lang/NullPointerException'> (0x07468b80) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1185]
+Event: 538.069 Thread 0x183a6400 Exception <a 'java/lang/StackOverflowError'> (0x07497d70) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 538.069 Thread 0x183a6400 Exception <a 'java/lang/StackOverflowError'> (0x0749b990) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 538.069 Thread 0x183a6400 Exception <a 'java/lang/StackOverflowError'> (0x0749f5b0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 538.069 Thread 0x183a6400 Exception <a 'java/lang/StackOverflowError'> (0x074a31e0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 538.069 Thread 0x183a6400 Exception <a 'java/lang/StackOverflowError'> (0x074a6e48) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+
+Events (10 events):
+Event: 538.050 Executing VM operation: GenCollectForAllocation
+Event: 538.052 Executing VM operation: GenCollectForAllocation done
+Event: 538.069 loading class sun/font/FontScalerException
+Event: 538.069 loading class sun/font/FontScalerException done
+Event: 538.070 Thread 0x183a6400 DEOPT PACKING pc=0x052b3054 sp=0x21627e90
+Event: 538.070 Thread 0x183a6400 DEOPT UNPACKING pc=0x0518c5e5 sp=0x21627d84 mode 1
+Event: 538.070 Thread 0x183a6400 DEOPT PACKING pc=0x052b0f1c sp=0x21627f60
+Event: 538.070 Thread 0x183a6400 DEOPT UNPACKING pc=0x0518c5e5 sp=0x21627e6c mode 1
+Event: 538.070 Thread 0x183a6400 DEOPT PACKING pc=0x052b0b78 sp=0x21628020
+Event: 538.070 Thread 0x183a6400 DEOPT UNPACKING pc=0x0518c5e5 sp=0x21627ec0 mode 1
+
+
+Dynamic libraries:
+0x010c0000 - 0x010f3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\java.exe
+0x77b50000 - 0x77cdd000 	C:\Windows\SYSTEM32\ntdll.dll
+0x77a80000 - 0x77b50000 	C:\Windows\System32\KERNEL32.DLL
+0x759e0000 - 0x75bb7000 	C:\Windows\System32\KERNELBASE.dll
+0x70a60000 - 0x70afa000 	C:\Windows\SYSTEM32\apphelp.dll
+0x74390000 - 0x7440d000 	C:\Windows\System32\SYSFER.DLL
+0x779f0000 - 0x77a68000 	C:\Windows\System32\ADVAPI32.dll
+0x76420000 - 0x764dd000 	C:\Windows\System32\msvcrt.dll
+0x76540000 - 0x76583000 	C:\Windows\System32\sechost.dll
+0x758d0000 - 0x7598e000 	C:\Windows\System32\RPCRT4.dll
+0x74480000 - 0x744a0000 	C:\Windows\System32\SspiCli.dll
+0x74470000 - 0x7447a000 	C:\Windows\System32\CRYPTBASE.dll
+0x74b40000 - 0x74b97000 	C:\Windows\System32\bcryptPrimitives.dll
+0x76150000 - 0x762c5000 	C:\Windows\System32\USER32.dll
+0x76400000 - 0x76416000 	C:\Windows\System32\win32u.dll
+0x763c0000 - 0x763e2000 	C:\Windows\System32\GDI32.dll
+0x75ff0000 - 0x7614e000 	C:\Windows\System32\gdi32full.dll
+0x75f70000 - 0x75fec000 	C:\Windows\System32\msvcp_win.dll
+0x74c00000 - 0x74d17000 	C:\Windows\System32\ucrtbase.dll
+0x6d250000 - 0x6d461000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.16299.192_none_5d760485a7e0eb41\COMCTL32.dll
+0x75390000 - 0x755d6000 	C:\Windows\System32\combase.dll
+0x779c0000 - 0x779e5000 	C:\Windows\System32\IMM32.DLL
+0x6ebf0000 - 0x6ecaf000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\msvcr100.dll
+0x67de0000 - 0x681b3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\client\jvm.dll
+0x746c0000 - 0x746c6000 	C:\Windows\System32\PSAPI.DLL
+0x6eab0000 - 0x6eab8000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x75e10000 - 0x75e76000 	C:\Windows\System32\WS2_32.dll
+0x70440000 - 0x70464000 	C:\Windows\SYSTEM32\WINMM.dll
+0x6fe40000 - 0x6fe63000 	C:\Windows\SYSTEM32\winmmbase.dll
+0x74b00000 - 0x74b38000 	C:\Windows\System32\cfgmgr32.dll
+0x74300000 - 0x74308000 	C:\Windows\SYSTEM32\VERSION.dll
+0x6fbe0000 - 0x6fbec000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\verify.dll
+0x6fb70000 - 0x6fb92000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\java.dll
+0x65960000 - 0x6598b000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\jdwp.dll
+0x68900000 - 0x68907000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\npt.dll
+0x6fb40000 - 0x6fb54000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\zip.dll
+0x76590000 - 0x778c3000 	C:\Windows\System32\SHELL32.dll
+0x77920000 - 0x779a8000 	C:\Windows\System32\shcore.dll
+0x74d20000 - 0x752e6000 	C:\Windows\System32\windows.storage.dll
+0x75990000 - 0x759d5000 	C:\Windows\System32\shlwapi.dll
+0x763f0000 - 0x763fe000 	C:\Windows\System32\kernel.appcore.dll
+0x778d0000 - 0x77915000 	C:\Windows\System32\powrprof.dll
+0x75c10000 - 0x75c24000 	C:\Windows\System32\profapi.dll
+0x68ef0000 - 0x68ef9000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\dt_shmem.dll
+0x685c0000 - 0x68707000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\awt.dll
+0x752f0000 - 0x75383000 	C:\Windows\System32\OLEAUT32.dll
+0x6ef70000 - 0x6efe9000 	C:\Windows\system32\uxtheme.dll
+0x75600000 - 0x75744000 	C:\Windows\System32\MSCTF.dll
+0x702d0000 - 0x702f3000 	C:\Windows\system32\dwmapi.dll
+0x75d10000 - 0x75e07000 	C:\Windows\System32\ole32.dll
+0x70b90000 - 0x70ba3000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x70b60000 - 0x70b8f000 	C:\Windows\system32\rsaenh.dll
+0x70bb0000 - 0x70bc9000 	C:\Windows\SYSTEM32\bcrypt.dll
+0x70320000 - 0x70342000 	C:\Windows\SYSTEM32\USERENV.dll
+0x68360000 - 0x68375000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\net.dll
+0x70b00000 - 0x70b55000 	C:\Windows\system32\mswsock.dll
+0x70730000 - 0x70760000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x77a70000 - 0x77a77000 	C:\Windows\System32\NSI.dll
+0x6e030000 - 0x6e043000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x6e010000 - 0x6e024000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x68f20000 - 0x68f2f000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\nio.dll
+0x617f0000 - 0x618cf000 	C:\Windows\system32\opengl32.dll
+0x668d0000 - 0x668f5000 	C:\Windows\SYSTEM32\GLU32.dll
+0x6f8b0000 - 0x6f8b3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-console-l1-1-0.dll
+0x6f5d0000 - 0x6f5d3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-datetime-l1-1-0.dll
+0x6ebe0000 - 0x6ebe3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-debug-l1-1-0.dll
+0x6ebd0000 - 0x6ebd3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-errorhandling-l1-1-0.dll
+0x6ebc0000 - 0x6ebc4000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-file-l1-1-0.dll
+0x6ebb0000 - 0x6ebb3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-file-l1-2-0.dll
+0x6eba0000 - 0x6eba3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-file-l2-1-0.dll
+0x6eb90000 - 0x6eb93000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-handle-l1-1-0.dll
+0x6eb80000 - 0x6eb83000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-heap-l1-1-0.dll
+0x6eb70000 - 0x6eb73000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-interlocked-l1-1-0.dll
+0x6eb60000 - 0x6eb63000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-libraryloader-l1-1-0.dll
+0x6eb50000 - 0x6eb53000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-localization-l1-2-0.dll
+0x6eb40000 - 0x6eb43000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-memory-l1-1-0.dll
+0x6eb30000 - 0x6eb33000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-namedpipe-l1-1-0.dll
+0x6d730000 - 0x6d733000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-processenvironment-l1-1-0.dll
+0x6a210000 - 0x6a213000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-processthreads-l1-1-0.dll
+0x6a200000 - 0x6a203000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-processthreads-l1-1-1.dll
+0x69ea0000 - 0x69ea3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-profile-l1-1-0.dll
+0x69e90000 - 0x69e93000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-rtlsupport-l1-1-0.dll
+0x69e80000 - 0x69e83000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-string-l1-1-0.dll
+0x69e70000 - 0x69e73000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-synch-l1-1-0.dll
+0x69e60000 - 0x69e63000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-synch-l1-2-0.dll
+0x69e50000 - 0x69e53000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-sysinfo-l1-1-0.dll
+0x69e40000 - 0x69e43000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-timezone-l1-1-0.dll
+0x69e30000 - 0x69e33000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-core-util-l1-1-0.dll
+0x69e20000 - 0x69e23000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-conio-l1-1-0.dll
+0x69e10000 - 0x69e14000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x69e00000 - 0x69e03000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x69df0000 - 0x69df3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x69de0000 - 0x69de3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x69dd0000 - 0x69dd3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x69dc0000 - 0x69dc5000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-math-l1-1-0.dll
+0x69710000 - 0x69715000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-multibyte-l1-1-0.dll
+0x69700000 - 0x69710000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-private-l1-1-0.dll
+0x696f0000 - 0x696f3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-process-l1-1-0.dll
+0x696e0000 - 0x696e4000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x696d0000 - 0x696d4000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x696c0000 - 0x696c4000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-string-l1-1-0.dll
+0x696b0000 - 0x696b3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-time-l1-1-0.dll
+0x696a0000 - 0x696a3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x69580000 - 0x69698000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\ucrtbase.dll
+0x69560000 - 0x69574000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\vcruntime140.dll
+0x68b40000 - 0x68bac000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\msvcp140.dll
+0x694a0000 - 0x694db000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\concrt140.dll
+0x693d0000 - 0x693ef000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\prism_d3d.dll
+0x689d0000 - 0x68b3c000 	C:\Windows\system32\d3d9.dll
+0x5a670000 - 0x5dd7e000 	C:\Windows\System32\DriverStore\FileRepository\ki124064.inf_amd64_c15f53d05810a034\igdumdim32.dll
+0x746d0000 - 0x74af6000 	C:\Windows\System32\SETUPAPI.dll
+0x68990000 - 0x689c8000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\glass.dll
+0x75c30000 - 0x75d04000 	C:\Windows\System32\COMDLG32.dll
+0x593b0000 - 0x5a66d000 	C:\Windows\System32\DriverStore\FileRepository\ki124064.inf_amd64_c15f53d05810a034\igc32.dll
+0x67a30000 - 0x67a69000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\fontmanager.dll
+0x66890000 - 0x668c2000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\t2k.dll
+0x65930000 - 0x65954000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\dcpr.dll
+0x6d740000 - 0x6d8c1000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dawt.useSystemAAFontSettings=on -XX:MaxGCPauseMillis=50 -agentlib:jdwp=transport=dt_shmem,address=javadebug -Dfile.encoding=UTF-8 
+java_command: bluej.runtime.ExecServer UTF-8
+java_class_path (initial): C:\Program Files (x86)\Greenfoot\lib\extensions\greenfoot.jar;C:\Program Files (x86)\Greenfoot\lib\bluejcore.jar;C:\Program Files (x86)\Greenfoot\lib\bluejeditor.jar;C:\Program Files (x86)\Greenfoot\lib\bluejext.jar;C:\Program Files (x86)\Greenfoot\lib\AppleJavaExtensions.jar;C:\Program Files (x86)\Greenfoot\lib\junit-4.11.jar;C:\Program Files (x86)\Greenfoot\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\Greenfoot\lib\bluej.jar;C:\Program Files (x86)\Greenfoot\lib\diffutils-1.2.1.jar;C:\Program Files (x86)\Greenfoot\lib\commons-logging-api-1.1.2.jar;C:\Program Files (x86)\Greenfoot\lib\jl1.0.1.jar;C:\Program Files (x86)\Greenfoot\lib\opencsv-2.3.jar;C:\Program Files (x86)\Greenfoot\lib\xom-1.2.9.jar;C:\Program Files (x86)\Greenfoot\lib\lang-stride.jar;C:\Program Files (x86)\Greenfoot\lib\nsmenufx-2.1.4.jar;C:\Program Files (x86)\Greenfoot\lib\richtextfx-fat-0.9.0.jar;C:\Program Files (x86)\Greenfoot\lib\guava-17.0.jar;C:\Program Files (x86)\Greenfoot\lib\javassist-3.18.0.jar;C:\Program Files (x86)\Greenfoot\lib\commons-vfs2-2.0.jar;C:\Program Files (x86)\Greenfoot\lib\httpclient-4.1.1.jar;C:\Program Files (x86)\Greenfoot\lib\httpcore-4.1.jar;C:\Program Files (x86)\Greenfoot\lib\httpmime-4.1.1.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Users\gustavom.oliveira\AppData\Local\Microsoft\WindowsApps;C:\Users\gustavom.oliveira\AppData\Local\GitHubDesktop\bin
+USERNAME=gustavom.oliveira
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 16299 (10.0.16299.15)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 158 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8249400k(4113072k free), swap 9560120k(4114440k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.181-b13) for windows-x86 JRE (1.8.0_181-b13), built on Jul  7 2018 03:18:20 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Oct 17 12:15:59 2018
+elapsed time: 538 seconds (0d 0h 8m 58s)
+
