@@ -10,8 +10,8 @@ public class Match extends Actor
 
 
 {
-<<<<<<< HEAD
-    /**
+
+   /**
      * Act - do whatever the Match wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -20,13 +20,6 @@ public class Match extends Actor
 
     }  
 
-    public Match(){
-        GreenfootImage img = new GreenfootImage("Match.png");
-        //img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
-        setImage(img);
-
-    }
-=======
     private int contadorPartidas = 0;
     
    public Match(){
@@ -34,5 +27,5 @@ public class Match extends Actor
         //img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
    }
->>>>>>> db5c679771050530d26eb4bb29f013c523505326
+
 }

@@ -22,9 +22,13 @@ public class PlacarTime extends Actor
      */
     public void act()
     {
-        atualizaImagem(valor);
-        atualizaImagem();
-        resetImagem();
+        MyWorld mundo = (MyWorld) getWorld();
+        if(mundo.cicloAtual()>193){
+            atualizaImagem(valor);
+            atualizaImagem();
+            resetImagem();
+        }
+        
     }
 
     /**
