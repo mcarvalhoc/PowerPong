@@ -21,7 +21,7 @@ public class go extends Actor
         if(mundo.cicloAtual() % Taxa_de_Atualizacao == 0){
             proximoPasso++;
         }
-        
+
         if(proximoPasso > 5){
             proximoPasso = 5;
         }

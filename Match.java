@@ -14,12 +14,13 @@ public class Match extends Actor
      */
     public void act() 
     {
-        
+
     }  
-     public Match(){
-         GreenfootImage img = new GreenfootImage("Match.png");
-         //img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
-         setImage(img);
-    
+
+    public Match(){
+        GreenfootImage img = new GreenfootImage("Match.png");
+        //img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
+        setImage(img);
+
     }
 }

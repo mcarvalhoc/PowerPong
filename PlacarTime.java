@@ -16,13 +16,8 @@ public class PlacarTime extends Actor
      */
     public void act() 
     {
-        atualizaImagem(valor);
-       
-        
-        
-
+        atualizaImagem(valor);        
     }    
-
     private void atualizaImagem(int valor){
         GreenfootImage Time = new GreenfootImage(converteNumero(valor), 24, Color.WHITE, new Color(0,0,0,0),Color.BLACK);
         setImage(Time);

@@ -18,17 +18,17 @@ public class Bola extends Actor
         if(mundo.cicloAtual()>193){
             movimentoBola();
         }
-            changeDirection();
+        changeDirection();
     }
 
     public void movimentoBola(){
         int newX = getX() + hDirection * speed;
         int newY = getY() + vDirection * speed;
-        setLocation(newX,newY);
+        setLocation(newX,newY);        
     }
 
     public void changeDirection(){
-        if(getX()>=getWorld().getWidth() - 5){
+        if(getX()>=getWorld().getWidth() - 5){            
             hDirection*=-1;
         }
         if(getY()>=getWorld().getHeight() - 5){
@@ -40,16 +40,16 @@ public class Bola extends Actor
         if(getY() <= 5){
             vDirection*=-1;
         }
-        if((getY() <= 30) && isTouching(BarraLateral.class)){
+        if(getY() <= 30 && isTouching(BarraLateral.class)){
             vDirection*=-1;
         }
-        if((getY() <= 367) && isTouching(BarraLateral2.class)){
+        if(getY() <= 367 && isTouching(BarraLateral2.class)){
             vDirection*=-1;
         }
-        if((getX() <= 60) && isTouching(Pong.class)){
+        if(getX() <= 60 && isTouching(Pong.class)){
             hDirection*= -1;
         }
-        if((getY() <= 650) && isTouching(Pong2.class)){
+        if(getY() <= 650 && isTouching(Pong2.class)){
             hDirection*= - 1;
         }
     } 
@@ -73,5 +73,5 @@ public class Bola extends Actor
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
-     }
+    }
 }

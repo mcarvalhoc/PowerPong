@@ -21,10 +21,12 @@ public class MyWorld extends World
         super(700, 390, 1); 
         prepare();
     }
+
     public void act()
     {    
         cicloAtual++;
     }
+
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -59,7 +61,7 @@ public class MyWorld extends World
         Pong pong = new Pong();
         addObject(pong,50,200);
         Bola bola = new Bola();
-        addObject(bola,401,192);
+        addObject(bola,401,192);    
         this.pontuacaoUm = new PlacarPong1();
         addObject(this.pontuacaoUm,73,9);
         this.pontuacaoDois = new PlacarPong2();
@@ -73,15 +75,15 @@ public class MyWorld extends World
         go go = new go();
         addObject(go,354,189);
     }
-    
+
     public int cicloAtual(){
         return cicloAtual;
     }
-    
+
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
-    
+
     public void acrescentaPontosDois(int valor){
         pontuacaoDois.addPontos(valor);
         Pong pong = new Pong();
