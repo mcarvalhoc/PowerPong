@@ -6,12 +6,13 @@ import greenfoot.*;
  */
 public class Jogo extends World
 {
+    private int cicloAtual = 0; 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private PlacarPong1 pontuacaoUm;
     private PlacarPong2 pontuacaoDois;
     private PlacarMatch numeroPartidas;
     private Integer ciclo = 0;
-
+    private PlacarTime placartime;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -22,10 +23,20 @@ public class Jogo extends World
         prepare();
     }
 
+    public boolean oTempoEstaZerado(){
+        return this.placartime.valor == 2;
+    }
+
+    public void act()
+    {    
+        cicloAtual++;
+        contaCiclo();
+    }
+
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    public void prepare()
     {
         BarraLateral barraLateral =  new  BarraLateral();
         addObject(barraLateral, 350, 22);
@@ -49,7 +60,7 @@ public class Jogo extends World
         Time time2 =  new  Time();
         addObject(time2, 459, 9);
         BarraCentral barraCentral =  new  BarraCentral();
-        addObject(barraCentral, 358, 195);
+        addObject(barraCentral, getWidth()/2, 195);
         Pong2 pong2 =  new  Pong2();
         addObject(pong2, 650, 200);
         Pong pong =  new  Pong();
@@ -62,54 +73,42 @@ public class Jogo extends World
         addObject(this.pontuacaoDois, 665, 9);
         this.numeroPartidas = new PlacarMatch();
         addObject(this.numeroPartidas,259,9);
-        PlacarTime placartime =  new  PlacarTime();
+        this.placartime =  new  PlacarTime();
         addObject(placartime, 518, 115);
         placartime.setLocation(495, 8);
         placartime.setLocation(497, 8);
+        BarPowerPong barPowerPong = new BarPowerPong();
+        addObject(barPowerPong,36,379);
+        barPowerPong.setLocation(53,379);
+        go go = new go();
+        addObject(go,354,189);
     }
 
-    /**
-     * 
-     */
-    public void contaCiclo()
-    {
-        ciclo = ciclo + 1;
+    public int cicloAtual(){
+        return cicloAtual;
     }
 
-    /**
-     * 
-     */
+    public void acrescentaPontosUm(int valor){
+        pontuacaoUm.addPontos(valor);
+    }
+
     public int getCiclo()
     {
         return ciclo;
     }
 
-    /**
-     * 
-     */
-    public void act()
-    {
-        contaCiclo();
-    }
-
-    /**
-     * 
-     */
     public void acrescentaPontosPartida(int valorPartida)
     {
         numeroPartidas.addPartidas(valorPartida);
-    }
-   
-    /**
-     * 
-     */
-    public void acrescentaPontosUm(int valor)
+    }    
+
+    public void contaCiclo()
     {
-        pontuacaoUm.addPontos(valor);
+        ciclo = ciclo + 1;
     }
 
-    public void acrescentaPontosDois(int valor)
-    {
-        pontuacaoDois.addPontos(valor);
+    public void acrescentaPontosDois(int valor){
+        pontuacaoDois.addPontos(valor);        
     }
+
 }

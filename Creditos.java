@@ -17,7 +17,6 @@ public class Creditos extends World
     }
 
     public void act(){
-        showText("Créditos", 350, 195);
     }
 
     /**
@@ -26,7 +25,12 @@ public class Creditos extends World
      */
     private void prepare()
     {
+        ImagemCreditos imagemcreditos = new ImagemCreditos();
+        addObject(imagemcreditos,356,198);
+        
         VoltarInicio voltarinicio2 = new VoltarInicio();
-        addObject(voltarinicio2,283,262);
+        addObject(voltarinicio2,343,347);
+        
+        
     }
 }
