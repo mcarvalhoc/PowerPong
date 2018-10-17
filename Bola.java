@@ -6,7 +6,7 @@ import greenfoot.*;
  */
 public class Bola extends Actor
 {
-    public int speed = 4;
+    public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1
     /**
@@ -18,7 +18,11 @@ public class Bola extends Actor
         if(mundo.cicloAtual()>193){
             movimentoBola();
         }
+        speedUp();
+        movimentoBola();
         changeDirection();
+        somaPontoUm();
+        somaPontoDois();        
     }
 
     public void movimentoBola(){
@@ -28,13 +32,15 @@ public class Bola extends Actor
     }
 
     public void changeDirection(){
-        if(getX()>=getWorld().getWidth() - 5){            
+        Pong pong = (Pong)getOneIntersectingObject(Pong.class);
+        Pong2 pong2 = (Pong2)getOneIntersectingObject(Pong2.class);
+        if(getX()>=getWorld().getWidth() - 5){
             hDirection*=-1;
         }
         if(getY()>=getWorld().getHeight() - 5){
             vDirection*=-1;
         }
-        if(getX() <= 5){
+         if(getX() <= 5){
             hDirection*=-1;
         }
         if(getY() <= 5){
@@ -46,28 +52,37 @@ public class Bola extends Actor
         if(getY() <= 367 && isTouching(BarraLateral2.class)){
             vDirection*=-1;
         }
-        if(getX() <= 60 && isTouching(Pong.class)){
+        if((getX() <= 60) && pong != null){
             hDirection*= -1;
         }
-        if(getY() <= 650 && isTouching(Pong2.class)){
+        if((getY() <= 650) && pong2 != null){
             hDirection*= - 1;
         }
-    } 
-
+    }
+        
     public void somaPontoUm(){
-        if(getX()>= 599){
+        if(getX()>= 695){
             MyWorld World =(MyWorld) getWorld();
-            World.acrescentaPontosUm(10);
+            World.acrescentaPontosUm(1);
+            World.acrescentaPontosPartida(1);
         }
     }
 
     public void somaPontoDois(){
-        if(getX()<=1){
+        if(getX()<=5){
             MyWorld World = (MyWorld) getWorld();
-            World.acrescentaPontosDois(10);
+            World.acrescentaPontosDois(1);
+            World.acrescentaPontosPartida(1);
         }
     }
-
+    
+    public void speedUp(){        
+            MyWorld mundo = getWorldOfType(MyWorld.class);           
+           if (mundo.oTempoEstaZerado()){
+                this.speed = this.speed+1;
+            }                 
+    }
+   
     public  Bola(){
         GreenfootImage img = new GreenfootImage(18, 17);
         img.setColor(Color.WHITE);
@@ -75,3 +90,4 @@ public class Bola extends Actor
         setImage(img);
     }
 }
+

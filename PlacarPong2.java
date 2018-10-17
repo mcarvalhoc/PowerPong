@@ -32,7 +32,7 @@ public class PlacarPong2 extends Actor
         setImage(Pong1);
     }
 
-    private String converteNumero(int valor){
-        return String.format("%04d",valor);
+   private String converteNumero(int valor){
+       return String.format("%02d",valor);
     }
 }
