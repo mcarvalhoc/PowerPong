@@ -7,7 +7,7 @@ public class PlacarTime extends Actor
 {
     /* WARNING: This file is auto-generated and any changes to it will be overwritten*/
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-    public int valor = 300;
+    public  int valor = 300;
 
     /**
      * 
@@ -24,6 +24,7 @@ public class PlacarTime extends Actor
     {
         atualizaImagem(valor);
         atualizaImagem();
+        resetImagem();
     }
 
     /**
@@ -47,12 +48,22 @@ public class PlacarTime extends Actor
         }
        
     }
-
+    
+    public void resetImagem(){
+        if(valor == 0){
+            valor = 300;
+        }
+    }
+   
     /**
      * 
      */
     private String converteNumero(int valor)
     {
         return String.format("%03d", valor);
+    }
+    
+    public int getValor() {
+        return valor;
     }
 }
