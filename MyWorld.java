@@ -6,14 +6,13 @@ import greenfoot.*;
  */
 public class MyWorld extends World
 {
+    private int cicloAtual = 0; 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private PlacarPong1 pontuacaoUm;
     private PlacarPong2 pontuacaoDois;
     private PlacarMatch numeroPartidas;
     private Integer ciclo = 0;
     private PlacarTime placartime;
-    
-
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -23,11 +22,15 @@ public class MyWorld extends World
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     }
-    
+
     public boolean oTempoEstaZerado(){
-    
         return this.placartime.valor == 2;
-    
+    }
+
+    public void act()
+    {    
+        cicloAtual++;
+        contaCiclo();
     }
 
     /**
@@ -78,50 +81,34 @@ public class MyWorld extends World
         addObject(barraVelocidade,609,375);
         barraVelocidade.setLocation(669,380);
         barraVelocidade.setLocation(639,379);
+        go go = new go();
+        addObject(go,354,189);
+    }
+    public int cicloAtual(){
+        return cicloAtual;
     }
 
-    /**
-     * 
-     */
-    public void contaCiclo()
-    {
-        ciclo = ciclo + 1;
+    public void acrescentaPontosUm(int valor){
+        pontuacaoUm.addPontos(valor);
     }
 
-    /**
-     * 
-     */
     public int getCiclo()
     {
         return ciclo;
     }
 
-    /**
-     * 
-     */
-    public void act()
-    {
-        contaCiclo();
-    }
-
-    /**
-     * 
-     */
     public void acrescentaPontosPartida(int valorPartida)
     {
         numeroPartidas.addPartidas(valorPartida);
-    }
-   
-    /**
-     * 
-     */
-    public void acrescentaPontosUm(int valor)
+    }    
+
+        
+    public void contaCiclo()
     {
-        pontuacaoUm.addPontos(valor);
+        ciclo = ciclo + 1;
     }
 
-    public void acrescentaPontosDois(int valor)
-    {
-        pontuacaoDois.addPontos(valor);
+    public void acrescentaPontosDois(int valor){
+        pontuacaoDois.addPontos(valor);        
     }
 }
