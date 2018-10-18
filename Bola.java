@@ -8,20 +8,22 @@ public class Bola extends Actor
 {
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
-    public int vDirection = 1;//Cima:-1 Baixo=1
-    /**
-     * 
-     */
+    public int vDirection = 1;//Cima:-1 Baixo=1    
+    
     public void act()
     {
-        Jogo mundo = (Jogo) getWorld(); 
-        if(mundo.cicloAtual()>193){
-            movimentoBola();
-        }
+        vaiBola();
         speedUp();
         changeDirection();
         somaPontoUm();
         somaPontoDois();        
+    }
+
+    public void vaiBola(){
+        Jogo mundo = (Jogo) getWorld(); 
+        if(mundo.cicloAtual()>193){
+            movimentoBola();
+        }
     }
 
     public void movimentoBola(){
@@ -39,7 +41,7 @@ public class Bola extends Actor
         if(getY()>=getWorld().getHeight() - 5){
             vDirection*=-1;
         }
-         if(getX() <= 5){
+        if(getX() <= 5){
             hDirection*=-1;
         }
         if(getY() <= 5){
@@ -58,7 +60,7 @@ public class Bola extends Actor
             hDirection*= - 1;
         }
     }
-    
+
     public void somaPontoUm(){
         if(getX()>= 695){
             Jogo World =(Jogo) getWorld();
@@ -74,21 +76,18 @@ public class Bola extends Actor
             World.acrescentaPontosPartida(1);
         }
     }
-    
+
     public void speedUp(){        
-           Jogo mundo = getWorldOfType(Jogo.class);           
-           if (mundo.oTempoEstaZerado()){
-                this.speed = this.speed+1;
-            }                 
+        Jogo mundo = getWorldOfType(Jogo.class);           
+        if (mundo.oTempoEstaZerado()){
+            this.speed = this.speed+1;
+        }                 
     }
-   
+
     public  Bola(){
         GreenfootImage img = new GreenfootImage(18, 17);
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
     }
-    
-    
 }
-
