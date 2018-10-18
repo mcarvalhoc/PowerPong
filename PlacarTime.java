@@ -22,7 +22,7 @@ public class PlacarTime extends Actor
      */
     public void act()
     {
-        MyWorld mundo = (MyWorld) getWorld();
+        Jogo mundo = (Jogo) getWorld();
         if(mundo.cicloAtual()>193){
             atualizaImagem(valor);
             atualizaImagem();
@@ -46,7 +46,7 @@ public class PlacarTime extends Actor
     public void atualizaImagem()
     {
         float resultado = 300;
-        resultado = getWorldOfType(MyWorld.class).getCiclo() % 8;
+        resultado = getWorldOfType(Jogo.class).getCiclo() % 8;
         if ((resultado > 6)&&(valor !=0)){
             valor = valor - 1;
         }

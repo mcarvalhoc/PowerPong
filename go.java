@@ -17,7 +17,7 @@ public class go extends Actor
     public void act() 
     {
         setImage(new GreenfootImage("numeros/num_"+proximoPasso+".png"));
-        MyWorld mundo = (MyWorld) getWorld();        
+        Jogo mundo = (Jogo) getWorld();        
         if(mundo.cicloAtual() % Taxa_de_Atualizacao == 0){
             proximoPasso++;
         }
