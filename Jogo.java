@@ -4,7 +4,7 @@ import greenfoot.*;
  * Write a description of class MyWorld here.
  * @author (your name) @version (a version number or a date)
  */
-public class MyWorld extends World
+public class Jogo extends World
 {
     private int cicloAtual = 0; 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
@@ -16,7 +16,7 @@ public class MyWorld extends World
     /**
      * Constructor for objects of class MyWorld.
      */
-    public MyWorld()
+    public Jogo()
     {
         super(700, 390, 1);
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
@@ -36,7 +36,7 @@ public class MyWorld extends World
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    public void prepare()
     {
         BarraLateral barraLateral =  new  BarraLateral();
         addObject(barraLateral, 350, 22);

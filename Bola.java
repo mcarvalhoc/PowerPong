@@ -14,7 +14,7 @@ public class Bola extends Actor
      */
     public void act()
     {
-        MyWorld mundo = (MyWorld) getWorld(); 
+        Jogo mundo = (Jogo) getWorld(); 
         if(mundo.cicloAtual()>193){
             movimentoBola();
         }
@@ -58,10 +58,10 @@ public class Bola extends Actor
             hDirection*= - 1;
         }
     }
-        
+    
     public void somaPontoUm(){
         if(getX()>= 695){
-            MyWorld World =(MyWorld) getWorld();
+            Jogo World =(Jogo) getWorld();
             World.acrescentaPontosUm(1);
             World.acrescentaPontosPartida(1);
         }
@@ -69,14 +69,14 @@ public class Bola extends Actor
 
     public void somaPontoDois(){
         if(getX()<=5){
-            MyWorld World = (MyWorld) getWorld();
+            Jogo World = (Jogo) getWorld();
             World.acrescentaPontosDois(1);
             World.acrescentaPontosPartida(1);
         }
     }
     
     public void speedUp(){        
-            MyWorld mundo = getWorldOfType(MyWorld.class);           
+           Jogo mundo = getWorldOfType(Jogo.class);           
            if (mundo.oTempoEstaZerado()){
                 this.speed = this.speed+1;
             }                 
@@ -88,5 +88,7 @@ public class Bola extends Actor
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
     }
+    
+    
 }
 
