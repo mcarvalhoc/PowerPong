@@ -17,14 +17,14 @@ public class Bola extends Actor
         somaPontoUm();
         somaPontoDois();        
     }
-
+    
     public void vaiBola(){
         Jogo mundo = (Jogo) getWorld(); 
         if(mundo.cicloAtual()>193){
             movimentoBola();
         }            
     }        
-
+                                                
     public void movimentoBola(){
         int newX = getX() + hDirection * speed;
         int newY = getY() + vDirection * speed;
