@@ -8,8 +8,7 @@ public class Bola extends Actor
 {
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
-    public int vDirection = 1;//Cima:-1 Baixo=1    
-    
+    public int vDirection = 1;//Cima:-1 Baixo=1 
     public void act()
     {
         vaiBola();
@@ -23,8 +22,8 @@ public class Bola extends Actor
         Jogo mundo = (Jogo) getWorld(); 
         if(mundo.cicloAtual()>193){
             movimentoBola();
-        }
-    }
+        }            
+    }        
 
     public void movimentoBola(){
         int newX = getX() + hDirection * speed;
@@ -84,7 +83,7 @@ public class Bola extends Actor
         }                 
     }
 
-    public  Bola(){
+    public Bola(){
         GreenfootImage img = new GreenfootImage(18, 17);
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
