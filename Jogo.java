@@ -65,12 +65,10 @@ public class Jogo extends World
         addObject(barraCentral, getWidth()/2, 195);
         Pong2 pong2 =  new  Pong2();
         addObject(pong2, 650, 200);
-
         this.pong =  new  Pong();
         addObject(this.pong, 50, 200);
-
         Bola bola =  new  Bola();
-        addObject(bola, 401, 192);
+        addObject(bola, 351, 190);
         this.pontuacaoUm =  new  PlacarPong1();
         addObject(this.pontuacaoUm, 73, 9);
         this.pontuacaoDois =  new  PlacarPong2();
@@ -81,7 +79,6 @@ public class Jogo extends World
         addObject(placartime, 518, 115);
         placartime.setLocation(495, 8);
         placartime.setLocation(497, 8);
-
         BarPowerPong barPowerPong = new BarPowerPong();
         addObject(barPowerPong, 50,380);
         go go = new go();
