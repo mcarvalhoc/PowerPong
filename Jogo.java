@@ -14,6 +14,7 @@ public class Jogo extends World
     private Integer ciclo = 0;
     private PlacarTime placartime;
     public Pong pong;
+    public Pong2 pong2;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -63,8 +64,8 @@ public class Jogo extends World
         addObject(time2, 459, 9);
         BarraCentral barraCentral =  new  BarraCentral();
         addObject(barraCentral, getWidth()/2, 195);
-        Pong2 pong2 =  new  Pong2();
-        addObject(pong2, 650, 200);
+        this.pong2 =  new  Pong2();
+        addObject(this.pong2, 660, 200);
         this.pong =  new  Pong();
         addObject(this.pong, 50, 200);
         Bola bola =  new  Bola();
@@ -81,6 +82,8 @@ public class Jogo extends World
         placartime.setLocation(497, 8);
         BarPowerPong barPowerPong = new BarPowerPong();
         addObject(barPowerPong, 50,380);
+        BarPowerPong2 barPowerPong2 = new BarPowerPong2();
+        addObject(barPowerPong2,  645, 380);
         go go = new go();
         addObject(go,354,189);
         

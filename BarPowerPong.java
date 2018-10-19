@@ -45,7 +45,7 @@ public class BarPowerPong extends Actor
         myImage.setColor(Color.WHITE);
         myImage.drawRect(0, 0, barPowerWidth + 1, barPowerHeight + 1);
         myImage.setColor(Color.GREEN);
-        int tam = timerBoost * timerBoost / barPowerWidth;
+        int tam =  barPowerWidth * timerBoost / pong.timerBoostTotal ;
         myImage.fillRect(1 , 1, tam, barPowerHeight);
 
     }

@@ -12,8 +12,9 @@ public class Pong extends Actor
      * Act - do whatever the Pong wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    final public int timerBoostTotal = 400;
     boolean statusBoost = false;
-    public int timerBoost= 200;
+    public int timerBoost= 400;
     public void act() 
     {
         possoAndarParaCima();
