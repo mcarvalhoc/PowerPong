@@ -6,17 +6,19 @@ import greenfoot.*;
  */
 public class Bola extends Actor
 {
+    
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
-    public int vDirection = 1;//Cima:-1 Baixo=1    
-    
+    public int vDirection = 1;//Cima:-1 Baixo=1  
+
     public void act()
     {
         vaiBola();
         speedUp();
         changeDirection();
         somaPontoUm();
-        somaPontoDois();        
+        somaPontoDois();  
+
     }
 
     public void vaiBola(){
@@ -90,4 +92,6 @@ public class Bola extends Actor
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
     }
+    
+    
 }

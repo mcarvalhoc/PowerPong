@@ -20,7 +20,7 @@ public class Pong2 extends Actor
         possoAndarParaCima();
         possoAndarParaBaixo();
         ligarBoost();
-        rotacao();
+        
     }
 
     public Pong2(){
@@ -101,12 +101,5 @@ public class Pong2 extends Actor
         return this.statusBoost;
     } 
 
-    public void rotacao(){
-        if(Greenfoot.isKeyDown("Left")){
-            setRotation(-45);
-        }
-        else if(Greenfoot.isKeyDown("Right")){
-            setRotation(45);
-        }
-    }
+    
 }   
