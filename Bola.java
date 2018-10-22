@@ -86,7 +86,11 @@ public class Bola extends Actor
             World.acrescentaPontosPartida(1);
         }
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> b899f45d17c613a0c35e8dc1a17815763ec64ab1
     public void addRes(){        
         Jogo mundo = getWorldOfType(Jogo.class);           
         if (mundo.oTempoEstaZerado()){
