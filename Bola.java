@@ -1,5 +1,6 @@
 import lang.stride.*;
 import greenfoot.*;
+
 /**
  * Write a description of class Bola here.
  * @author (your name) @version (a version number or a date)
@@ -9,9 +10,10 @@ public class Bola extends Actor
     public int res = 0;
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
-    public int vDirection = 1;//Cima:-1 Baixo=1
+    public int vDirection = 1;//Cima:-1 Baixo=1    
+
     public void act()
-    {
+    {        
         vaiBola();
         changeDirection();
         somaPontoUm();
@@ -19,7 +21,7 @@ public class Bola extends Actor
         addRes();
         speedUp();
         resetRes();
-    }    
+    }           
 
     public void vaiBola(){
         Jogo mundo = (Jogo) getWorld(); 
@@ -27,20 +29,22 @@ public class Bola extends Actor
             movimentoBola();
         }
     }
-    
-    public void moveRandom(){
-    }
 
-    public void movimentoBola(){
+    /*public void saidaBola(){
         int newX = getX() + hDirection * speed;
         int newY = getY() + vDirection * speed;
         setLocation(newX,newY);
+    }*/
+    
+    public void movimentoBola(){
+        int newX = getX() + hDirection * speed;
+        int newY = getY() + vDirection * speed;
+        setLocation(newX,newY);        
     }
 
     public void changeDirection(){
         Pong pong = (Pong)getOneIntersectingObject(Pong.class);
-        Pong2 pong2 = (Pong2)getOneIntersectingObject(Pong2.class);
-        Jogo mundo = (Jogo) getWorld(); 
+        Pong2 pong2 = (Pong2)getOneIntersectingObject(Pong2.class);         
         if(getX()>=getWorld().getWidth() - 5){
             hDirection*=-1;
         }
@@ -72,6 +76,7 @@ public class Bola extends Actor
             Jogo World =(Jogo) getWorld();
             World.acrescentaPontosUm(1);
             World.acrescentaPontosPartida(1);
+            setLocation(351, 190);
         }
     }
 
@@ -80,6 +85,7 @@ public class Bola extends Actor
             Jogo World = (Jogo) getWorld();
             World.acrescentaPontosDois(1);
             World.acrescentaPontosPartida(1);
+            setLocation(351, 190);
         }
     }
 

@@ -69,8 +69,7 @@ public class Jogo extends World
         addObject(this.pong2, 660, 200);
         this.pong =  new  Pong();
         addObject(this.pong, 50, 200);
-        Bola bola =  new  Bola();
-        addObject(bola, 351, 190);
+        addBola();
         this.pontuacaoUm =  new  PlacarPong1();
         addObject(this.pontuacaoUm, 73, 9);
         this.pontuacaoDois =  new  PlacarPong2();
@@ -93,6 +92,10 @@ public class Jogo extends World
         return cicloAtual;
     }
 
+    public void addBola(){                
+        addObject(new Bola(), 351, 190);
+    }
+    
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
