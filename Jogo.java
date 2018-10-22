@@ -12,9 +12,10 @@ public class Jogo extends World
     private PlacarPong2 pontuacaoDois;
     private PlacarMatch numeroPartidas;
     private Integer ciclo = 0;
-    private PlacarTime placartime;
+    public PlacarTime placartime;
     public Pong pong;
     public Pong2 pong2;
+    public Bola bola = null;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -23,18 +24,19 @@ public class Jogo extends World
         super(700, 390, 1);
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
-    }
-
-    public boolean oTempoEstaZerado(){
-        return this.placartime.valor == 2;
-    }
-
+    } 
+    
     public void act()
     {    
         cicloAtual++;
         contaCiclo();
+
     }
     
+     public boolean oTempoEstaZerado(){
+        return this.placartime.valor == 1; 
+
+    }
     
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
@@ -68,8 +70,7 @@ public class Jogo extends World
         addObject(this.pong2, 660, 200);
         this.pong =  new  Pong();
         addObject(this.pong, 50, 200);
-        Bola bola =  new  Bola();
-        addObject(bola, 351, 190);
+        adicionaBola();
         this.pontuacaoUm =  new  PlacarPong1();
         addObject(this.pontuacaoUm, 73, 9);
         this.pontuacaoDois =  new  PlacarPong2();
@@ -89,6 +90,10 @@ public class Jogo extends World
         
     }
 
+    public void adicionaBola(){
+        addObject(new Bola(), 351,190);
+    }
+    
     public int cicloAtual(){
         return cicloAtual;
     }

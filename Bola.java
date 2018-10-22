@@ -6,17 +6,23 @@ import greenfoot.*;
  */
 public class Bola extends Actor
 {
+
+    public int res = 0;
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
-    public int vDirection = 1;//Cima:-1 Baixo=1    
+    public int vDirection = 1;//Cima:-1 Baixo=1
     
+
     public void act()
     {
         vaiBola();
-        speedUp();
         changeDirection();
         somaPontoUm();
-        somaPontoDois();        
+        somaPontoDois();
+        addRes();
+        speedUp();
+        resetRes();
+
     }
 
     public void vaiBola(){
@@ -54,15 +60,18 @@ public class Bola extends Actor
             vDirection*=-1;
         }
         if((getX() <= 60) && pong != null){
+            Greenfoot.playSound("BatidaPong.wav");
             hDirection*= -1;
         }
         if((getY() <= 650) && pong2 != null){
+            Greenfoot.playSound("BatidaPong.wav");
             hDirection*= - 1;
         }
     }
 
     public void somaPontoUm(){
         if(getX()>= 695){
+            Greenfoot.playSound("BatidaPong.wav");
             Jogo World =(Jogo) getWorld();
             World.acrescentaPontosUm(1);
             World.acrescentaPontosPartida(1);
@@ -71,17 +80,30 @@ public class Bola extends Actor
 
     public void somaPontoDois(){
         if(getX()<=5){
+            Greenfoot.playSound("BatidaPong.wav");
             Jogo World = (Jogo) getWorld();
             World.acrescentaPontosDois(1);
             World.acrescentaPontosPartida(1);
         }
     }
-
-    public void speedUp(){        
+    
+    public void addRes(){        
         Jogo mundo = getWorldOfType(Jogo.class);           
         if (mundo.oTempoEstaZerado()){
-            this.speed = this.speed+1;
+            res = res+1;
         }                 
+    }
+    
+    public void speedUp(){
+        if(res == 8){
+            speed = speed+2;
+        }
+    }
+    
+    public void resetRes(){
+        if(res == 8){
+            res = 0;
+        }
     }
 
     public  Bola(){
@@ -90,4 +112,6 @@ public class Bola extends Actor
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
     }
+    
+    
 }
