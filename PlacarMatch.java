@@ -17,7 +17,7 @@ public class PlacarMatch extends Actor
     
     public void addPartidas(int valorPartida){
        numeroPartidas += valorPartida; 
-       if(numeroPartidas >= 10000){
+       if(numeroPartidas >= 3){
             Greenfoot.setWorld( new  GameOver());
        }
    }

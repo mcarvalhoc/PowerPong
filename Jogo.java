@@ -87,8 +87,6 @@ public class Jogo extends World
         addObject(barPowerPong2,  645, 380);
         go go = new go();
         addObject(go,354,189);
-        SpeedUp speedUp = new SpeedUp();
-        addObject(speedUp,300,100);
         
     }
 
