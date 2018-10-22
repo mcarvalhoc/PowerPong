@@ -6,18 +6,22 @@ import greenfoot.*;
  */
 public class Bola extends Actor
 {
-    
+
+    public int res = 0;
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
-    public int vDirection = 1;//Cima:-1 Baixo=1  
+    public int vDirection = 1;//Cima:-1 Baixo=1
+    
 
     public void act()
     {
         vaiBola();
-        speedUp();
         changeDirection();
         somaPontoUm();
-        somaPontoDois();  
+        somaPontoDois();
+        addRes();
+        speedUp();
+        resetRes();
 
     }
 
@@ -79,11 +83,23 @@ public class Bola extends Actor
         }
     }
 
-    public void speedUp(){        
+    public void addRes(){        
         Jogo mundo = getWorldOfType(Jogo.class);           
         if (mundo.oTempoEstaZerado()){
-            this.speed = this.speed+1;
+            res = res+1;
         }                 
+    }
+    
+    public void speedUp(){
+        if(res == 8){
+            speed = speed+2;
+        }
+    }
+    
+    public void resetRes(){
+        if(res == 8){
+            res = 0;
+        }
     }
 
     public  Bola(){
