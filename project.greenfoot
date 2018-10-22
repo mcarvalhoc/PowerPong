@@ -163,11 +163,19 @@ dependency8.type=UsesDependency
 dependency9.from=GameOver
 dependency9.to=VoltarInicio
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=1047
 editor.fx.0.width=974
 editor.fx.0.x=953
 editor.fx.0.y=0
 height=1047
+=======
+editor.fx.0.height=876
+editor.fx.0.width=1456
+editor.fx.0.x=1672
+editor.fx.0.y=32
+height=1026
+>>>>>>> b899f45d17c613a0c35e8dc1a17815763ec64ab1
 package.numDependencies=49
 package.numTargets=31
 project.charset=UTF-8
@@ -183,7 +191,11 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
 simulation.speed=49
+=======
+simulation.speed=100
+>>>>>>> b899f45d17c613a0c35e8dc1a17815763ec64ab1
 target1.height=50
 target1.name=BarraLateral2
 target1.showInterface=false
@@ -247,6 +259,7 @@ target16.x=0
 target16.y=0
 target17.height=50
 target17.name=IniciarJogo
+target17.naviview.expanded=true
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=80
@@ -309,6 +322,7 @@ target23.x=0
 target23.y=0
 target24.height=50
 target24.name=Score
+target24.naviview.expanded=false
 target24.showInterface=false
 target24.type=ClassTarget
 target24.width=80
@@ -332,6 +346,7 @@ target26.x=0
 target26.y=0
 target27.height=50
 target27.name=BarPowerPong2
+target27.naviview.expanded=true
 target27.showInterface=false
 target27.type=ClassTarget
 target27.width=110
