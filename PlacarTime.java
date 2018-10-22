@@ -51,7 +51,7 @@ public class PlacarTime extends Actor
         }
 
     }
-
+   
     public void resetImagem(){
         if(valor == 0){
             valor = 300;
