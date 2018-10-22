@@ -86,8 +86,7 @@ public class Jogo extends World
         BarPowerPong2 barPowerPong2 = new BarPowerPong2();
         addObject(barPowerPong2,  645, 380);
         go go = new go();
-        addObject(go,354,189);
-        
+        addObject(go,354,189);        
     }
 
     public int cicloAtual(){

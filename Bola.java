@@ -6,17 +6,10 @@ import greenfoot.*;
  */
 public class Bola extends Actor
 {
-
     public int res = 0;
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
-<<<<<<< HEAD
-    public int vDirection = 1;//Cima:-1 Baixo=1 
-=======
     public int vDirection = 1;//Cima:-1 Baixo=1
-    
-
->>>>>>> b899f45d17c613a0c35e8dc1a17815763ec64ab1
     public void act()
     {
         vaiBola();
@@ -26,25 +19,28 @@ public class Bola extends Actor
         addRes();
         speedUp();
         resetRes();
+    }    
 
-    }
-    
     public void vaiBola(){
         Jogo mundo = (Jogo) getWorld(); 
         if(mundo.cicloAtual()>193){
             movimentoBola();
-        }            
-    }        
-                                                
+        }
+    }
+    
+    public void moveRandom(){
+    }
+
     public void movimentoBola(){
         int newX = getX() + hDirection * speed;
         int newY = getY() + vDirection * speed;
-        setLocation(newX,newY);        
+        setLocation(newX,newY);
     }
 
     public void changeDirection(){
         Pong pong = (Pong)getOneIntersectingObject(Pong.class);
         Pong2 pong2 = (Pong2)getOneIntersectingObject(Pong2.class);
+        Jogo mundo = (Jogo) getWorld(); 
         if(getX()>=getWorld().getWidth() - 5){
             hDirection*=-1;
         }
@@ -93,13 +89,13 @@ public class Bola extends Actor
             res = res+1;
         }                 
     }
-    
+
     public void speedUp(){
         if(res == 8){
             speed = speed+2;
         }
     }
-    
+
     public void resetRes(){
         if(res == 8){
             res = 0;
@@ -111,7 +107,5 @@ public class Bola extends Actor
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
-    }
-    
-    
+    }        
 }
