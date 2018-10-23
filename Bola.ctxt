@@ -7,9 +7,9 @@ comment10.params=
 comment10.target=Bola()
 comment2.params=
 comment2.target=void\ vaiBola()
+comment2.text=public\ void\ movimentoAleatorio(boolean\ moveRandom){\r\n\ \ \ \ \ \ \ \ if(isTouching(BarraCentral.class)\ &&\ moveRandom){\r\n\ \ \ \ \ \ \ \ \ \ \ \ changeDirection();\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else{\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ changeDirection();\ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ }\ \r\n}
 comment3.params=
 comment3.target=void\ movimentoBola()
-comment3.text=public\ void\ saidaBola(){\r\n\ \ \ \ \ \ \ \ int\ newX\ \=\ getX()\ +\ hDirection\ *\ speed;\r\n\ \ \ \ \ \ \ \ int\ newY\ \=\ getY()\ +\ vDirection\ *\ speed;\r\n\ \ \ \ \ \ \ \ setLocation(newX,newY);\r\n}
 comment4.params=
 comment4.target=void\ changeDirection()
 comment5.params=

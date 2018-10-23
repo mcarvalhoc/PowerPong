@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlacarMatch extends Actor
 
 {
-   private int numeroPartidas = 0;
+   public int numeroPartidas = 0;
     
    public PlacarMatch(){
         atualizaImagem(numeroPartidas);
@@ -31,7 +31,7 @@ public class PlacarMatch extends Actor
           atualizaImagem(numeroPartidas);
    }    
     
-    private void atualizaImagem(int valorPartida){
+   private void atualizaImagem(int valorPartida){
         GreenfootImage Partida = new GreenfootImage(converteNumero(valorPartida), 24, Color.WHITE, new Color(0,0,0,0),Color.BLACK);
         setImage(Partida);
    }
