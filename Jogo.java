@@ -29,6 +29,7 @@ public class Jogo extends World
     public void act()
     {    
         cicloAtual++;
+        criadorDeModificador();
         contaCiclo();
     }
     
@@ -36,6 +37,16 @@ public class Jogo extends World
         return this.placartime.valor == 1; 
     }
     
+    public void criadorDeModificador(){
+        if(cicloAtual() % 15== 0){
+        int x = Greenfoot.getRandomNumber(560) + 78  ;
+        int y = Greenfoot.getRandomNumber(310) + 40 ;
+        addObject(new ModificadorGanharPowerBoost(), x,y);
+        
+       }
+    }
+    
+   
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */

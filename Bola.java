@@ -22,7 +22,16 @@ public class Bola extends Actor
         addRes();
         speedUp();
         resetRes();
-    }           
+        pegaModificadorGanharPowerBoost();
+    }    
+    
+    public void pegaModificadorGanharPowerBoost(){
+        Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
+        if (obj != null){
+            getWorldOfType(Jogo.class).removeObject(obj);
+        }
+        
+    }
 
     /*public void movimentoAleatorio(boolean moveRandom){
         if(isTouching(BarraCentral.class) && moveRandom){
