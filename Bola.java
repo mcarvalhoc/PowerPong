@@ -11,10 +11,9 @@ public class Bola extends Actor
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1    
-    public boolean andarParaFrente = false;
+
     public void act()
-    {                       
-        //movimentoAleatorio(booleammoveRandom);
+    {                               
         vaiBola();
         changeDirection();
         somaPontoUm();
@@ -25,33 +24,24 @@ public class Bola extends Actor
         pegaModificadorGanharPowerBoost();
     }    
 
-    public void pegaModificadorGanharPowerBoost(){
-        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
-        Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
-        if (obj != null){
-            getWorldOfType(Jogo.class).removeObject(obj);
-            if(meioDoMundo > getX()){
-                getWorldOfType(Jogo.class).pong.addTimeBoost();
-            }
-            else if(meioDoMundo < getX()){
-                getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
-            }
-        }
-
-    }
-    /*public void movimentoAleatorio(boolean moveRandom){
-    if(isTouching(BarraCentral.class) && moveRandom){
-    changeDirection();
-    }
-    else{            
-    changeDirection();         
-    } 
-    } */
-
-    public void vaiBola(){
+    /*public void moverRandom(){
+        int newX = getX() + hDirection * speed * -1;
+        int newY = getY() + vDirection * speed * -1;
         Jogo mundo = (Jogo) getWorld(); 
         if(mundo.cicloAtual()>193){
+            hDirection*=-1;
+        }else{
+            vDirection*=+1;
+        }
+    }*/
+
+    public void vaiBola(){
+        Jogo mundo = (Jogo) getWorld();
+        if(mundo.cicloAtual()>193){
             movimentoBola();
+        /*}else{
+            moverRandom();
+        }*/
         }
     }
 
@@ -87,6 +77,20 @@ public class Bola extends Actor
         }
         if((getY() <= 650) && pong2 != null){
             hDirection*= - 1;
+        }
+    }
+
+    public void pegaModificadorGanharPowerBoost(){
+        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
+        Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
+        if(obj != null){
+            getWorldOfType(Jogo.class).removeObject(obj);
+            if(meioDoMundo > getX()){
+                getWorldOfType(Jogo.class).pong.addTimeBoost();
+            }
+            else if(meioDoMundo < getX()){
+                getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
+            }
         }
     }
 
