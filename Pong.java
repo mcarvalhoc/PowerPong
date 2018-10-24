@@ -20,7 +20,6 @@ public class Pong extends Actor
         possoAndarParaCima();
         possoAndarParaBaixo();
         ligarBoost();
-       
     }
 
     public Pong(){
@@ -67,6 +66,10 @@ public class Pong extends Actor
         controleBoost();
     }
 
+    public void addTimeBoost(){
+        setTimerBoost(400);
+    }
+
     public void controleBoost(){
         if(getStatusBoost()){
             //1 segundo dura em media 60 ciclos;
@@ -84,7 +87,7 @@ public class Pong extends Actor
         }else{
             return 3;    
         }
-     }
+    }
     //Getters e Setters
     public void setTimerBoost(int valor){
         this.timerBoost = valor;
@@ -102,5 +105,4 @@ public class Pong extends Actor
         return this.statusBoost;
     }   
 
-    
 }   
