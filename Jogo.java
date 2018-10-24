@@ -28,6 +28,7 @@ public class Jogo extends World
     public void act()
     {    
         cicloAtual++;
+        criadorDeModificador();
         contaCiclo();
 
     }
@@ -37,6 +38,16 @@ public class Jogo extends World
 
     }
     
+    public void criadorDeModificador(){
+        if(cicloAtual() % 15== 0){
+        int x = Greenfoot.getRandomNumber(560) + 78  ;
+        int y = Greenfoot.getRandomNumber(310) + 40 ;
+        addObject(new ModificadorGanharPowerBoost(), x,y);
+        
+       }
+    }
+    
+   
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
@@ -69,8 +80,7 @@ public class Jogo extends World
         addObject(this.pong2, 660, 200);
         this.pong =  new  Pong();
         addObject(this.pong, 50, 200);
-        Bola bola =  new  Bola();
-        addObject(bola, 351, 190);
+        addBola();
         this.pontuacaoUm =  new  PlacarPong1();
         addObject(this.pontuacaoUm, 73, 9);
         this.pontuacaoDois =  new  PlacarPong2();
@@ -86,16 +96,24 @@ public class Jogo extends World
         BarPowerPong2 barPowerPong2 = new BarPowerPong2();
         addObject(barPowerPong2,  645, 380);
         go go = new go();
+<<<<<<< HEAD
         addObject(go,354,189);
         SpeedUp speedUp = new SpeedUp();
         addObject(speedUp, 354, 189);
 
+=======
+        addObject(go,354,189);        
+>>>>>>> b3f6e698394dcf44ff6009fa6eb86b1dcdc2f6b9
     }
 
     public int cicloAtual(){
         return cicloAtual;
     }
 
+    public void addBola(){                
+        addObject(new Bola(), 351, 190);
+    }
+    
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
