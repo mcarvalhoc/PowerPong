@@ -16,6 +16,10 @@ public class go extends Actor
      */
     public void act() 
     {
+        saiGo();
+    } 
+    public void saiGo()
+    {
         setImage(new GreenfootImage("numeros/num_"+proximoPasso+".png"));
         Jogo mundo = (Jogo) getWorld();        
         if(mundo.cicloAtual() % Taxa_de_Atualizacao == 0){
@@ -25,5 +29,5 @@ public class go extends Actor
         if(proximoPasso > 5){
             proximoPasso = 5;
         }
-    }    
+    }
 }

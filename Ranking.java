@@ -6,7 +6,6 @@ import greenfoot.*;
  */
 public class Ranking extends World
 {
-
     /**
      * Constructor for objects of class Ranking.
      */
@@ -17,7 +16,8 @@ public class Ranking extends World
     }
 
     public void act(){
-        showText("Ranking", 350, 195);
+        showText("Nome Jogador", 200, 30);
+        showText("Pontuação", 400, 30);
     }
 
     /**

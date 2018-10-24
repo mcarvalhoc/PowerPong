@@ -15,6 +15,8 @@ public class Jogo extends World
     public PlacarTime placartime;
     public Pong pong;
     public Pong2 pong2;
+    public go proximoPasso;
+    
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -30,21 +32,32 @@ public class Jogo extends World
         cicloAtual++;
         criadorDeModificador();
         contaCiclo();
-
     }
 
     public boolean oTempoEstaZerado(){
         return this.placartime.valor == 1; 
-
+    }
+    
+    public boolean tempoQuaseZero(){
+        return this.placartime.valor == 2;
     }
 
     public void criadorDeModificador(){
+
         if(cicloAtual() % 15== 0){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
             addObject(new ModificadorGanharPowerBoost(), x,y);
 
         }
+
+        if(cicloAtual() %  900 == 0 ){
+        int x = Greenfoot.getRandomNumber(560) + 78  ;
+        int y = Greenfoot.getRandomNumber(310) + 40 ;
+        addObject(new ModificadorGanharPowerBoost(), x,y);
+        
+       }
+
     }
 
     /**
@@ -112,7 +125,7 @@ public class Jogo extends World
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
-
+    
     public int getCiclo()
     {
         return ciclo;

@@ -20,7 +20,7 @@ public class Pong2 extends Actor
         possoAndarParaCima();
         possoAndarParaBaixo();
         ligarBoost();
-        
+
     }
 
     public Pong2(){
@@ -66,16 +66,20 @@ public class Pong2 extends Actor
         controleBoost();
     }
 
-        public void controleBoost(){
-            if(getStatusBoost()){
-                //1 segundo dura em media 60 ciclos;
-                if(getTimerBoost() >= 0){
-                    setTimerBoost(getTimerBoost() - 1);
-                }else{
-                    statusBoost = false;
-                }
-            }  
-        }
+    public void addTimeBoost(){
+        setTimerBoost(400);
+    }
+
+    public void controleBoost(){
+        if(getStatusBoost()){
+            //1 segundo dura em media 60 ciclos;
+            if(getTimerBoost() >= 0){
+                setTimerBoost(getTimerBoost() - 1);
+            }else{
+                statusBoost = false;
+            }
+        }  
+    }
 
     public int velocidade(){
         if(getStatusBoost()){
@@ -101,5 +105,4 @@ public class Pong2 extends Actor
         return this.statusBoost;
     } 
 
-    
 }   
