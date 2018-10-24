@@ -44,7 +44,7 @@ public class Jogo extends World
 
     public void criadorDeModificador(){
 
-        if(cicloAtual() % 15== 0){
+        if(cicloAtual() % 1000== 0){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
             addObject(new ModificadorGanharPowerBoost(), x,y);

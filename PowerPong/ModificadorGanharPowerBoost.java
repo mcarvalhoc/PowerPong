@@ -1,3 +1,5 @@
+package PowerPong;
+
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
