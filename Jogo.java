@@ -6,7 +6,7 @@ import greenfoot.*;
  */
 public class Jogo extends World
 {
-    private int cicloAtual = 0; 
+    private int cicloAtual = 0;
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private PlacarPong1 pontuacaoUm;
     private PlacarPong2 pontuacaoDois;
@@ -88,8 +88,8 @@ public class Jogo extends World
         go go = new go();
         addObject(go,354,189);
         SpeedUp speedUp = new SpeedUp();
-        addObject(speedUp,300,100);
-        
+        addObject(speedUp, 354, 189);
+
     }
 
     public int cicloAtual(){
