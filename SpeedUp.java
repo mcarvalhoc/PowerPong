@@ -6,7 +6,9 @@ import greenfoot.*;
  */
 public class SpeedUp extends Actor
 {
-    public int proximoPasso = 1; 
+
+    public int proximoPasso = 0; 
+
     /**
      * Act - do whatever the SpeedUp wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -35,8 +37,10 @@ public class SpeedUp extends Actor
     }
     
     public void voltaImg(){
-        if(proximoPasso == 5){
-            proximoPasso = 1;
+
+        if(proximoPasso == 4){
+            proximoPasso = 0;
+
         }
     }
 }

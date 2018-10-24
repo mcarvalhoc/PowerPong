@@ -11,9 +11,10 @@ public class Bola extends Actor
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1    
-
+    public boolean andarParaFrente = false;
     public void act()
-    {        
+    {                       
+        //movimentoAleatorio(booleammoveRandom);
         vaiBola();
         changeDirection();
         somaPontoUm();
@@ -23,14 +24,29 @@ public class Bola extends Actor
         resetRes();
         pegaModificadorGanharPowerBoost();
     }    
-    
+
     public void pegaModificadorGanharPowerBoost(){
+        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
         Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
         if (obj != null){
             getWorldOfType(Jogo.class).removeObject(obj);
+            if(meioDoMundo > getX()){
+                getWorldOfType(Jogo.class).pong.addTimeBoost();
+            }
+            else if(meioDoMundo < getX()){
+                getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
+            }
         }
-        
+
     }
+    /*public void movimentoAleatorio(boolean moveRandom){
+    if(isTouching(BarraCentral.class) && moveRandom){
+    changeDirection();
+    }
+    else{            
+    changeDirection();         
+    } 
+    } */
 
     public void vaiBola(){
         Jogo mundo = (Jogo) getWorld(); 
@@ -39,12 +55,7 @@ public class Bola extends Actor
         }
     }
 
-    public void saidaBola(){
-        int newX = getX() + hDirection * speed;
-        int newY = getY() + vDirection * speed;
-        setLocation(newX,newY);
-    }
-    
+
     public void movimentoBola(){
         int newX = getX() + hDirection * speed;
         int newY = getY() + vDirection * speed;
