@@ -32,8 +32,10 @@ public class BarPowerPong extends Actor
         update();
         pong.ligarBoost();
         pong.controleBoost();
+        
 
     }    
+    
     public void update(){
         int timerBoost = pong.timerBoost;
         setImage(new GreenfootImage(barPowerWidth + 2, barPowerHeight + 2));
@@ -43,7 +45,9 @@ public class BarPowerPong extends Actor
         myImage.setColor(Color.GREEN);
         int tam =  barPowerWidth * timerBoost / pong.timerBoostTotal ;
         myImage.fillRect(1 , 1, tam, barPowerHeight);
-
+ 
     }
+    
+   
              
 }

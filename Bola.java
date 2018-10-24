@@ -24,22 +24,28 @@ public class Bola extends Actor
         resetRes();
         pegaModificadorGanharPowerBoost();
     }    
-    
+
     public void pegaModificadorGanharPowerBoost(){
+        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
         Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
         if (obj != null){
             getWorldOfType(Jogo.class).removeObject(obj);
+            if(meioDoMundo > getX()){
+                getWorldOfType(Jogo.class).pong.addTimeBoost();
+            }
+            else if(meioDoMundo < getX()){
+                getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
+            }
         }
-        
-    }
 
+    }
     /*public void movimentoAleatorio(boolean moveRandom){
-        if(isTouching(BarraCentral.class) && moveRandom){
-            changeDirection();
-        }
-        else{            
-            changeDirection();         
-        } 
+    if(isTouching(BarraCentral.class) && moveRandom){
+    changeDirection();
+    }
+    else{            
+    changeDirection();         
+    } 
     } */
 
     public void vaiBola(){
