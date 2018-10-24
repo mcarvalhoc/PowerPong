@@ -24,7 +24,7 @@ public class Jogo extends World
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     } 
-    
+
     public void act()
     {    
         cicloAtual++;
@@ -32,22 +32,21 @@ public class Jogo extends World
         contaCiclo();
 
     }
-    
-     public boolean oTempoEstaZerado(){
+
+    public boolean oTempoEstaZerado(){
         return this.placartime.valor == 1; 
 
     }
-    
+
     public void criadorDeModificador(){
         if(cicloAtual() % 15== 0){
-        int x = Greenfoot.getRandomNumber(560) + 78  ;
-        int y = Greenfoot.getRandomNumber(310) + 40 ;
-        addObject(new ModificadorGanharPowerBoost(), x,y);
-        
-       }
+            int x = Greenfoot.getRandomNumber(560) + 78  ;
+            int y = Greenfoot.getRandomNumber(310) + 40 ;
+            addObject(new ModificadorGanharPowerBoost(), x,y);
+
+        }
     }
-    
-   
+
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
@@ -96,14 +95,10 @@ public class Jogo extends World
         BarPowerPong2 barPowerPong2 = new BarPowerPong2();
         addObject(barPowerPong2,  645, 380);
         go go = new go();
-<<<<<<< HEAD
         addObject(go,354,189);
         SpeedUp speedUp = new SpeedUp();
         addObject(speedUp, 354, 189);
 
-=======
-        addObject(go,354,189);        
->>>>>>> b3f6e698394dcf44ff6009fa6eb86b1dcdc2f6b9
     }
 
     public int cicloAtual(){
@@ -113,7 +108,7 @@ public class Jogo extends World
     public void addBola(){                
         addObject(new Bola(), 351, 190);
     }
-    
+
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
