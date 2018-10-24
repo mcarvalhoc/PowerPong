@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class Bola extends Actor
 {
-    public int res = 0;
+    public int res = 0;//variavel satanica pra fazer o codigo dar certo sem pacto
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1    
@@ -39,11 +39,11 @@ public class Bola extends Actor
         }
     }
 
-    /*public void saidaBola(){
+    public void saidaBola(){
         int newX = getX() + hDirection * speed;
         int newY = getY() + vDirection * speed;
         setLocation(newX,newY);
-    }*/
+    }
     
     public void movimentoBola(){
         int newX = getX() + hDirection * speed;

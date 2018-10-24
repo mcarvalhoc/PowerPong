@@ -38,6 +38,11 @@ public class Jogo extends World
 
     }
 
+    public boolean tempoQuaseZero(){
+        return this.placartime.valor == 2;
+
+    }
+
     public void criadorDeModificador(){
         if(cicloAtual() % 15== 0){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
