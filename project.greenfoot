@@ -38,7 +38,11 @@ dependency15.from=Jogo
 dependency15.to=Pong2
 dependency15.type=UsesDependency
 dependency16.from=Jogo
+<<<<<<< HEAD
+dependency16.to=go
+=======
 dependency16.to=ModificadorGanharPowerBoost
+>>>>>>> b3f6e698394dcf44ff6009fa6eb86b1dcdc2f6b9
 dependency16.type=UsesDependency
 dependency17.from=Jogo
 dependency17.to=BarraLateral
@@ -169,6 +173,15 @@ dependency8.type=UsesDependency
 dependency9.from=GameOver
 dependency9.to=VoltarInicio
 dependency9.type=UsesDependency
+<<<<<<< HEAD
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=1047
+package.numDependencies=49
+package.numTargets=31
+=======
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=-32000
@@ -176,6 +189,7 @@ editor.fx.0.y=-32000
 height=1026
 package.numDependencies=51
 package.numTargets=32
+>>>>>>> b3f6e698394dcf44ff6009fa6eb86b1dcdc2f6b9
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -189,7 +203,11 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
+simulation.speed=57
+=======
 simulation.speed=50
+>>>>>>> b3f6e698394dcf44ff6009fa6eb86b1dcdc2f6b9
 target1.height=50
 target1.name=BarraLateral2
 target1.showInterface=false

@@ -11,9 +11,10 @@ public class Bola extends Actor
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1    
-
+    public boolean andarParaFrente = false;
     public void act()
-    {        
+    {                       
+        //movimentoAleatorio(booleammoveRandom);
         vaiBola();
         changeDirection();
         somaPontoUm();
@@ -32,6 +33,15 @@ public class Bola extends Actor
         
     }
 
+    /*public void movimentoAleatorio(boolean moveRandom){
+        if(isTouching(BarraCentral.class) && moveRandom){
+            changeDirection();
+        }
+        else{            
+            changeDirection();         
+        } 
+    } */
+
     public void vaiBola(){
         Jogo mundo = (Jogo) getWorld(); 
         if(mundo.cicloAtual()>193){
@@ -39,12 +49,6 @@ public class Bola extends Actor
         }
     }
 
-    /*public void saidaBola(){
-        int newX = getX() + hDirection * speed;
-        int newY = getY() + vDirection * speed;
-        setLocation(newX,newY);
-    }*/
-    
     public void movimentoBola(){
         int newX = getX() + hDirection * speed;
         int newY = getY() + vDirection * speed;

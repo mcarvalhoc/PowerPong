@@ -8,9 +8,16 @@ comment10.target=void\ resetRes()
 comment11.params=
 comment11.target=Bola()
 comment2.params=
+<<<<<<< HEAD
+comment2.target=void\ vaiBola()
+comment2.text=public\ void\ movimentoAleatorio(boolean\ moveRandom){\r\n\ \ \ \ \ \ \ \ if(isTouching(BarraCentral.class)\ &&\ moveRandom){\r\n\ \ \ \ \ \ \ \ \ \ \ \ changeDirection();\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else{\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ changeDirection();\ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ }\ \r\n}
+comment3.params=
+comment3.target=void\ movimentoBola()
+=======
 comment2.target=void\ pegaModificadorGanharPowerBoost()
 comment3.params=
 comment3.target=void\ vaiBola()
+>>>>>>> b3f6e698394dcf44ff6009fa6eb86b1dcdc2f6b9
 comment4.params=
 comment4.target=void\ movimentoBola()
 comment4.text=public\ void\ saidaBola(){\r\n\ \ \ \ \ \ \ \ int\ newX\ \=\ getX()\ +\ hDirection\ *\ speed;\r\n\ \ \ \ \ \ \ \ int\ newY\ \=\ getY()\ +\ vDirection\ *\ speed;\r\n\ \ \ \ \ \ \ \ setLocation(newX,newY);\r\n}

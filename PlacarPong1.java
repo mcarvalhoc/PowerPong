@@ -31,8 +31,8 @@ public class PlacarPong1 extends Actor
         GreenfootImage Pong1 = new GreenfootImage(converteNumero(valor), 24, Color.WHITE, new Color(0,0,0,0),Color.BLACK);
         setImage(Pong1);
     }
-   
-   private String converteNumero(int valor){
-       return String.format("%02d",valor);
+
+    private String converteNumero(int valor){
+        return String.format("%02d",valor);
     }
 }

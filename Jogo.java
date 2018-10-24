@@ -15,6 +15,7 @@ public class Jogo extends World
     public PlacarTime placartime;
     public Pong pong;
     public Pong2 pong2;
+    public go proximoPasso;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -30,12 +31,10 @@ public class Jogo extends World
         cicloAtual++;
         criadorDeModificador();
         contaCiclo();
-
     }
     
-     public boolean oTempoEstaZerado(){
+    public boolean oTempoEstaZerado(){
         return this.placartime.valor == 1; 
-
     }
     
     public void criadorDeModificador(){
@@ -110,7 +109,7 @@ public class Jogo extends World
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
-
+    
     public int getCiclo()
     {
         return ciclo;
