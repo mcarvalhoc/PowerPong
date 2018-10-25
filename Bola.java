@@ -29,6 +29,7 @@ public class Bola extends Actor
         int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
         Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
         if (obj != null){
+            Greenfoot.playSound("SomGanharPowerBoost.wav");
             getWorldOfType(Jogo.class).removeObject(obj);
             if(meioDoMundo > getX()){
                 getWorldOfType(Jogo.class).pong.addTimeBoost();
@@ -117,6 +118,7 @@ public class Bola extends Actor
     public void addRes(){        
         Jogo mundo = getWorldOfType(Jogo.class);           
         if (mundo.oTempoEstaZerado()){
+            Greenfoot.playSound("SomSpeedUp.wav");
             res = res+1;
         }                 
     }

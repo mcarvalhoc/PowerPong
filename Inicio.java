@@ -1,23 +1,14 @@
 import greenfoot.*;
 
-/**
- * Write a description of class MyWorldInicio here.
- * @author (your name) @version (a version number or a date)
- */
 public class Inicio extends World
 {
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private Integer ciclo = 0;
     private ImagemInicial imagemInicial = null;
-    private boolean statusSound = true;
     GreenfootSound sound = new GreenfootSound("SomMario.wav");
-    /**
-     * Constructor for objects of class MyWorldInicio.
-     */
+   
     public Inicio()
     {
         super(700, 390, 1);
-        /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     }
     
@@ -27,9 +18,6 @@ public class Inicio extends World
         contaCiclo();
     }
    
-    /**
-     * 
-     */
     private void prepare()
     {
         adicionaImagem();
@@ -44,55 +32,26 @@ public class Inicio extends World
         addObject(iniciaranking,556,243);
     }
 
-    public void IniciaJogo(){
-        if(ciclo == 2){
-            sound.play();
-            
-        }
-        if(Greenfoot.mouseClicked(IniciarJogo.class)){
-            Greenfoot.setWorld(new Jogo());
-            sound.stop();
-            }
+    private void IniciaJogo(){
+        sound.play();
     }
     
     public void desligaSom(){
-       this.statusSound = false;
+       sound.stop();
     }
     
-    /**
-     * 
-     */
     public void adicionaImagem()
     {
         addObject( new  ImagemInicial(),370,127);
     }
 
-    /**
-     * 
-     */
     public void contaCiclo()
     {
         ciclo=ciclo+1;
-        //if (ciclo > 600) {
-          //  ciclo = 0;
-        //}
     }
 
-    /**
-     * 
-     */
     public int getCiclo()
     {
         return ciclo;
-    }
-    public void controleSom(){
-    GreenfootSound sound = new GreenfootSound("SomMario.wav");
-    if(this.statusSound){
-        sound.play();
-        desligaSom();
-    }
-    else{
-        sound.pause();
-    }
     }
 }
