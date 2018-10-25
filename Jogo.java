@@ -39,7 +39,7 @@ public class Jogo extends World
     }
     
     public boolean tempoQuaseZero(){
-        return this.placartime.valor == 2;
+        return this.placartime.valor == 3;
     }
 
     public void criadorDeModificador(){
