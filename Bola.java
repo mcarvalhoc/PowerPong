@@ -77,24 +77,26 @@ public class Bola extends Actor
             vDirection*=-1;
         }
         if(getY() <= 30 && isTouching(BarraLateral.class)){
+            
             vDirection*=-1;
         }
         if(getY() <= 367 && isTouching(BarraLateral2.class)){
+           
             vDirection*=-1;
         }
         if((getX() <= 60) && pong != null){
-            Greenfoot.playSound("BatidaPong.wav");
+            Greenfoot.playSound("ToquePong.wav");
             hDirection*= -1;
         }
         if((getY() <= 650) && pong2 != null){
-            Greenfoot.playSound("BatidaPong.wav");
+            Greenfoot.playSound("ToquePong.wav");
             hDirection*= - 1;
         }
     }
 
     public void somaPontoUm(){
         if(getX()>= 695){
-            Greenfoot.playSound("BatidaPong.wav");
+            Greenfoot.playSound("FazGol.wav");
             Jogo World =(Jogo) getWorld();
             World.acrescentaPontosUm(1);
             World.acrescentaPontosPartida(1);
@@ -104,7 +106,7 @@ public class Bola extends Actor
 
     public void somaPontoDois(){
         if(getX()<=5){
-            Greenfoot.playSound("BatidaPong.wav");
+            Greenfoot.playSound("FazGol.wav");
             Jogo World = (Jogo) getWorld();
             World.acrescentaPontosDois(1);
             World.acrescentaPontosPartida(1);

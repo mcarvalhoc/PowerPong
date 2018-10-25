@@ -9,7 +9,8 @@ public class Inicio extends World
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private Integer ciclo = 0;
     private ImagemInicial imagemInicial = null;
-
+    private boolean statusSound = true;
+    GreenfootSound sound = new GreenfootSound("SomMario.wav");
     /**
      * Constructor for objects of class MyWorldInicio.
      */
@@ -18,24 +19,20 @@ public class Inicio extends World
         super(700, 390, 1);
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
-        
-        
-    }
-     
-    public void act(){
-        if(Greenfoot.mouseClicked(IniciarJogo.class)){
-        Greenfoot.setWorld(new Jogo());
-    }
-    contaCiclo();
     }
     
+    public void act(){
+        //controleSom();
+        IniciaJogo();
+        contaCiclo();
+    }
+   
     /**
      * 
      */
     private void prepare()
     {
         adicionaImagem();
-
         IniciarJogo iniciarjogo = new IniciarJogo();
         addObject(iniciarjogo,129,252);
         IniciaCréditos iniciacréditos = new IniciaCréditos();
@@ -47,6 +44,21 @@ public class Inicio extends World
         addObject(iniciaranking,556,243);
     }
 
+    public void IniciaJogo(){
+        if(ciclo == 2){
+            sound.play();
+            
+        }
+        if(Greenfoot.mouseClicked(IniciarJogo.class)){
+            Greenfoot.setWorld(new Jogo());
+            sound.stop();
+            }
+    }
+    
+    public void desligaSom(){
+       this.statusSound = false;
+    }
+    
     /**
      * 
      */
@@ -61,9 +73,9 @@ public class Inicio extends World
     public void contaCiclo()
     {
         ciclo=ciclo+1;
-        if (ciclo > 1000) {
-            ciclo = 0;
-        }
+        //if (ciclo > 600) {
+          //  ciclo = 0;
+        //}
     }
 
     /**
@@ -72,5 +84,15 @@ public class Inicio extends World
     public int getCiclo()
     {
         return ciclo;
+    }
+    public void controleSom(){
+    GreenfootSound sound = new GreenfootSound("SomMario.wav");
+    if(this.statusSound){
+        sound.play();
+        desligaSom();
+    }
+    else{
+        sound.pause();
+    }
     }
 }
