@@ -16,6 +16,8 @@ public class Jogo extends World
     public Pong pong;
     public Pong2 pong2;
     public go proximoPasso;
+    private boolean iniciarSom = true;
+    GreenfootSound sound = new GreenfootSound("SomMundoJogo.wav");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -27,25 +29,46 @@ public class Jogo extends World
         prepare();
     } 
     
+    public void desligaSom(){
+       sound.stop();
+    }
+    
     public void act()
     {    
         cicloAtual++;
-        criadorDeModificador();
+        criadorDeModificadorDeBoost();
+        criadorDeModificadorTamanhoDePad();
         contaCiclo();
+        IniciaSom();
+    }
+    
+    public void IniciaSom(){
+        if(iniciarSom == true){
+        sound.play();
+       }
     }
     
     public boolean oTempoEstaZerado(){
         return this.placartime.valor == 1; 
     }
     
-    public void criadorDeModificador(){
+    public void criadorDeModificadorDeBoost(){
         if(cicloAtual() %  900 == 0 ){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
             addObject(new ModificadorGanharPowerBoost(), x,y);        
        }
     }
-       
+    
+    public void criadorDeModificadorTamanhoDePad(){
+        if(cicloAtual() %  1000 == 0 ){
+        int x = Greenfoot.getRandomNumber(560) + 78  ;
+        int y = Greenfoot.getRandomNumber(310) + 40 ;
+        addObject(new  ModificadorDeTamanhoPad(), x,y);
+        
+       }
+    }
+    
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
@@ -96,7 +119,7 @@ public class Jogo extends World
         go go = new go();
         addObject(go,354,189);        
     }
-
+    
     public int cicloAtual(){
         return cicloAtual;
     }

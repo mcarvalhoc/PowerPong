@@ -17,11 +17,18 @@ public class PlacarMatch extends Actor
     
     public void addPartidas(int valorPartida){
        numeroPartidas += valorPartida; 
-       if(numeroPartidas >= 1000){
+       if(numeroPartidas >= 5){
+            saiSom();
             Greenfoot.setWorld( new  GameOver());
        }
    }
   
+   public void saiSom()
+    {
+            Jogo World =(Jogo) getWorld();
+            World.desligaSom();
+        }
+        
    /**
      * Act - do whatever the PlacarPong1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

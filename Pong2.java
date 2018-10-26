@@ -15,19 +15,39 @@ public class Pong2 extends Actor
     final public int timerBoostTotal = 400;
     boolean statusBoost = false;
     int timerBoost= 400;
+    private int tempoDoModificadorTamanhoPad = 700;
+    public int tamanhoPadAltura = 78;
+    public int tamanhoPadLargura = 15;
+    private GreenfootImage img;
     public void act() 
     {
         possoAndarParaCima();
         possoAndarParaBaixo();
         ligarBoost();
+        TamanhoNormalPad();
 
     }
 
+    public void ModificarTamanhoPad(){
+        setTamanhoPadAltura(50); 
+        img.scale(tamanhoPadLargura, tamanhoPadAltura);  
+    }   
+
+    public void TamanhoNormalPad(){
+        if(getTamanhoPadAltura() == 50){
+            tempoDoModificadorTamanhoPad--;
+            if(tempoDoModificadorTamanhoPad == 0){
+                setTamanhoPadAltura(78); 
+                img.scale(tamanhoPadLargura, tamanhoPadAltura);  
+            }
+        }
+    }
+
     public Pong2(){
-        GreenfootImage img = new GreenfootImage(15, 78);
+        img = new GreenfootImage(tamanhoPadLargura, tamanhoPadAltura);
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
-        setImage(img);        
+        setImage(img);
     }
 
     public void possoAndarParaCima(){
@@ -96,6 +116,10 @@ public class Pong2 extends Actor
     public void setStatusBoost(boolean valor){
         this.statusBoost = valor;
     }
+    
+    public void setTamanhoPadAltura(int valor){
+        this.tamanhoPadAltura = valor;
+    }
 
     public int getTimerBoost(){
         return this.timerBoost;
@@ -104,5 +128,9 @@ public class Pong2 extends Actor
     public boolean getStatusBoost(){
         return this.statusBoost;
     } 
+    
+    public int getTamanhoPadAltura(){
+        return this.tamanhoPadAltura;
+    }
 
 }   

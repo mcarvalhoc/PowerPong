@@ -6,7 +6,7 @@ import greenfoot.*;
  */
 public class Creditos extends World
 {
-
+    GreenfootSound sound = new GreenfootSound("jackass.wav");
     /**
      * Constructor for objects of class Créditos.
      */
@@ -17,6 +17,7 @@ public class Creditos extends World
     }
 
     public void act(){
+        sound.play();
     }
 
     /**
@@ -27,10 +28,12 @@ public class Creditos extends World
     {
         ImagemCreditos imagemcreditos = new ImagemCreditos();
         addObject(imagemcreditos,356,198);
-        
-        VoltarInicio voltarinicio2 = new VoltarInicio();
-        addObject(voltarinicio2,343,347);
-        
-        
+        VoltarInicioDois voltariniciodois = new VoltarInicioDois();
+        addObject(voltariniciodois,335,361);
+        voltariniciodois.setLocation(323,349);
+    }
+    
+    public void desligaSom(){
+       sound.stop();
     }
 }

@@ -22,6 +22,7 @@ public class Bola extends Actor
         speedUp();
         resetRes();
         pegaModificadorGanharPowerBoost();
+        pegaModificadorTamanhoDoPad();
     }    
 
     /*public void moverRandom(){
@@ -34,6 +35,48 @@ public class Bola extends Actor
             vDirection*=+1;
         }
     }*/
+
+    public void pegaModificadorGanharPowerBoost(){
+        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
+        Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
+        if (obj != null){
+            Greenfoot.playSound("SomGanharPowerBoost.wav");
+
+            getWorldOfType(Jogo.class).removeObject(obj);
+            if(meioDoMundo > getX()){
+                getWorldOfType(Jogo.class).pong.addTimeBoost();
+            }
+            else if(meioDoMundo < getX()){
+                getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
+            }
+        }
+    }
+
+    public void pegaModificadorTamanhoDoPad(){
+        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
+        Actor obj = getOneIntersectingObject(ModificadorDeTamanhoPad.class);
+        if (obj != null){
+            Greenfoot.playSound("SomGanharPowerBoost.wav");
+
+            getWorldOfType(Jogo.class).removeObject(obj);
+            if(meioDoMundo > getX()){
+                getWorldOfType(Jogo.class).pong.ModificarTamanhoPad();
+            }
+            else if(meioDoMundo < getX()){
+               getWorldOfType(Jogo.class).pong2.ModificarTamanhoPad(); 
+            }
+        }
+
+    }
+
+    /*public void movimentoAleatorio(boolean moveRandom){
+    if(isTouching(BarraCentral.class) && moveRandom){
+    changeDirection();
+    }
+    else{            
+    changeDirection();         
+    } 
+    } */
 
     public void vaiBola(){
         Jogo mundo = (Jogo) getWorld();
@@ -73,48 +116,40 @@ public class Bola extends Actor
             vDirection*=-1;
         }
         if((getX() <= 60) && pong != null){
+            Greenfoot.playSound("ToquePong.wav");
             hDirection*= -1;
         }
         if((getY() <= 650) && pong2 != null){
+            Greenfoot.playSound("ToquePong.wav");
             hDirection*= - 1;
-        }
-    }
-
-    public void pegaModificadorGanharPowerBoost(){
-        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
-        Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
-        if(obj != null){
-            getWorldOfType(Jogo.class).removeObject(obj);
-            if(meioDoMundo > getX()){
-                getWorldOfType(Jogo.class).pong.addTimeBoost();
-            }
-            else if(meioDoMundo < getX()){
-                getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
-            }
         }
     }
 
     public void somaPontoUm(){
         if(getX()>= 695){
+            Greenfoot.playSound("FazGol.wav");
             Jogo World =(Jogo) getWorld();
             World.acrescentaPontosUm(1);
             World.acrescentaPontosPartida(1);
-            setLocation(351, 190);
-        }
+            setLocation(getX(),getY());
+            setLocation(67, 198);            
+        }                    
     }
 
     public void somaPontoDois(){
         if(getX()<=5){
+            Greenfoot.playSound("FazGol.wav");
             Jogo World = (Jogo) getWorld();
             World.acrescentaPontosDois(1);
             World.acrescentaPontosPartida(1);
-            setLocation(351, 190);
+            setLocation(644, 198);
         }
     }
 
     public void addRes(){        
         Jogo mundo = getWorldOfType(Jogo.class);           
         if (mundo.oTempoEstaZerado()){
+            Greenfoot.playSound("SomSpeedUp.wav");
             res = res+1;
         }                 
     }
