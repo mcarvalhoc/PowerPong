@@ -124,6 +124,14 @@ public class Jogo extends World
         return cicloAtual;
     }
 
+    public void addPong(){                
+        addObject(new Pong(), 50, 200);
+    }
+    
+    public void addPong2(){                
+        addObject(new Pong2(), 660, 200);
+    }
+    
     public void addBola(){                
         addObject(new Bola(), 351, 190);
     }

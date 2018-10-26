@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Pong here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author () 
+ * @version ()
  */
 public class Pong extends Actor
 {
@@ -26,21 +26,23 @@ public class Pong extends Actor
         possoAndarParaBaixo();
         ligarBoost();
         TamanhoNormalPad();
-
     }
 
     public void ModificarTamanhoPad(){
         setTamanhoPadAltura(50); 
-        img.scale(tamanhoPadLargura, tamanhoPadAltura);  
-        
+        img.scale(tamanhoPadLargura, tamanhoPadAltura); 
+        img.setColor(Color.RED);
+        img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
     }   
 
     public void TamanhoNormalPad(){
-       if(getTamanhoPadAltura() == 50){
+        if(getTamanhoPadAltura() == 50){
             tempoDoModificadorTamanhoPad--;
             if(tempoDoModificadorTamanhoPad == 0){
                 setTamanhoPadAltura(78); 
-                img.scale(tamanhoPadLargura, tamanhoPadAltura);  
+                img.scale(tamanhoPadLargura, tamanhoPadAltura); 
+                img.setColor(Color.WHITE);
+                img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
             }
         }
     }
@@ -50,7 +52,6 @@ public class Pong extends Actor
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
-
     }
 
     public void possoAndarParaCima(){
@@ -58,7 +59,7 @@ public class Pong extends Actor
             andarParaCima();
         }
     }
-
+    
     public void possoAndarParaBaixo(){
         Actor barralateral2 = getOneIntersectingObject(BarraLateral2.class);
         if(barralateral2==null){
@@ -129,9 +130,8 @@ public class Pong extends Actor
     public boolean getStatusBoost(){
         return this.statusBoost;
     }   
-    
+
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
-
 }   

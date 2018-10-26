@@ -25,12 +25,13 @@ public class Pong2 extends Actor
         possoAndarParaBaixo();
         ligarBoost();
         TamanhoNormalPad();
-
     }
 
     public void ModificarTamanhoPad(){
         setTamanhoPadAltura(50); 
-        img.scale(tamanhoPadLargura, tamanhoPadAltura);  
+        img.scale(tamanhoPadLargura, tamanhoPadAltura);
+        img.setColor(Color.RED);
+        img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
     }   
 
     public void TamanhoNormalPad(){
@@ -38,7 +39,9 @@ public class Pong2 extends Actor
             tempoDoModificadorTamanhoPad--;
             if(tempoDoModificadorTamanhoPad == 0){
                 setTamanhoPadAltura(78); 
-                img.scale(tamanhoPadLargura, tamanhoPadAltura);  
+                img.scale(tamanhoPadLargura, tamanhoPadAltura);
+                img.setColor(Color.WHITE);
+                img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
             }
         }
     }
@@ -116,7 +119,7 @@ public class Pong2 extends Actor
     public void setStatusBoost(boolean valor){
         this.statusBoost = valor;
     }
-    
+
     public void setTamanhoPadAltura(int valor){
         this.tamanhoPadAltura = valor;
     }
@@ -128,9 +131,8 @@ public class Pong2 extends Actor
     public boolean getStatusBoost(){
         return this.statusBoost;
     } 
-    
+
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
-
 }   
