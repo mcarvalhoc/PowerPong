@@ -15,15 +15,42 @@ public class Pong extends Actor
     final public int timerBoostTotal = 400;
     boolean statusBoost = false;
     public int timerBoost= 400;
+    private int tempoDoModificadorTamanhoPad = 700;
+    public int tamanhoPadAltura = 78;
+    public int tamanhoPadLargura = 15;
+    private GreenfootImage img;
+
     public void act() 
     {
         possoAndarParaCima();
         possoAndarParaBaixo();
         ligarBoost();
+        TamanhoNormalPad();
+
+    }
+
+    public void ModificarTamanhoPad(){
+        setTamanhoPadAltura(50); 
+        img.scale(tamanhoPadLargura, tamanhoPadAltura); 
+        img.setColor(Color.RED);
+        img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
+
+    }   
+
+    public void TamanhoNormalPad(){
+        if(getTamanhoPadAltura() == 50){
+            tempoDoModificadorTamanhoPad--;
+            if(tempoDoModificadorTamanhoPad == 0){
+                setTamanhoPadAltura(78); 
+                img.scale(tamanhoPadLargura, tamanhoPadAltura); 
+                img.setColor(Color.WHITE);
+                img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
+            }
+        }
     }
 
     public Pong(){
-        GreenfootImage img = new GreenfootImage(15, 78);
+        img = new GreenfootImage(tamanhoPadLargura, tamanhoPadAltura);
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
@@ -31,8 +58,6 @@ public class Pong extends Actor
     }
 
     public void possoAndarParaCima(){
-        //BarraLateral barralateral = (BarraLateral)getOneIntersectingObject(BarraLateral.class);
-        // if(barralateral==null||getY()<324){
         if(getY() > 67){     
             andarParaCima();
         }
@@ -97,6 +122,10 @@ public class Pong extends Actor
         this.statusBoost = valor;
     }
 
+    public void setTamanhoPadAltura(int valor){
+        this.tamanhoPadAltura = valor;
+    }
+
     public int getTimerBoost(){
         return this.timerBoost;
     }
@@ -104,5 +133,9 @@ public class Pong extends Actor
     public boolean getStatusBoost(){
         return this.statusBoost;
     }   
+
+    public int getTamanhoPadAltura(){
+        return this.tamanhoPadAltura;
+    }
 
 }   

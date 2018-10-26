@@ -32,7 +32,7 @@ public class go extends Actor
         if(proximoPasso == 1){
             ligaSomGo();
         }
-        if(proximoPasso >= 4){
+        if(proximoPasso > 5){
             mundo.iniciarSomGo = false;
             desligaSomGo();
             ligaSom();
@@ -50,13 +50,13 @@ public class go extends Actor
     }
      public void ligaSom()
     {
-            Jogo World =(Jogo) getWorld();
-            World.IniciaSom();
+        Jogo World =(Jogo) getWorld();
+        World.IniciaSom();
         }
         
     public void desligaSomGo()
     {
-            Jogo World =(Jogo) getWorld();
-            World.desligaSomGo();
+        Jogo World =(Jogo) getWorld();
+        World.desligaSomGo();
         }
 }
