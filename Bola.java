@@ -29,6 +29,7 @@ public class Bola extends Actor
         int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
         Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
         if (obj != null){
+            Greenfoot.playSound("SomGanharPowerBoost.wav");
             getWorldOfType(Jogo.class).removeObject(obj);
             if(meioDoMundo > getX()){
                 getWorldOfType(Jogo.class).pong.addTimeBoost();
@@ -77,21 +78,26 @@ public class Bola extends Actor
             vDirection*=-1;
         }
         if(getY() <= 30 && isTouching(BarraLateral.class)){
+            
             vDirection*=-1;
         }
         if(getY() <= 367 && isTouching(BarraLateral2.class)){
+           
             vDirection*=-1;
         }
         if((getX() <= 60) && pong != null){
+            Greenfoot.playSound("ToquePong.wav");
             hDirection*= -1;
         }
         if((getY() <= 650) && pong2 != null){
+            Greenfoot.playSound("ToquePong.wav");
             hDirection*= - 1;
         }
     }
 
     public void somaPontoUm(){
         if(getX()>= 695){
+            Greenfoot.playSound("FazGol.wav");
             Jogo World =(Jogo) getWorld();
             World.acrescentaPontosUm(1);
             World.acrescentaPontosPartida(1);
@@ -101,6 +107,7 @@ public class Bola extends Actor
 
     public void somaPontoDois(){
         if(getX()<=5){
+            Greenfoot.playSound("FazGol.wav");
             Jogo World = (Jogo) getWorld();
             World.acrescentaPontosDois(1);
             World.acrescentaPontosPartida(1);
@@ -111,6 +118,7 @@ public class Bola extends Actor
     public void addRes(){        
         Jogo mundo = getWorldOfType(Jogo.class);           
         if (mundo.oTempoEstaZerado()){
+            Greenfoot.playSound("SomSpeedUp.wav");
             res = res+1;
         }                 
     }
