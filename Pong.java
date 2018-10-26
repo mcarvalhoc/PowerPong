@@ -31,16 +31,20 @@ public class Pong extends Actor
 
     public void ModificarTamanhoPad(){
         setTamanhoPadAltura(50); 
-        img.scale(tamanhoPadLargura, tamanhoPadAltura);  
-        
+        img.scale(tamanhoPadLargura, tamanhoPadAltura); 
+        img.setColor(Color.RED);
+        img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
+
     }   
 
     public void TamanhoNormalPad(){
-       if(getTamanhoPadAltura() == 50){
+        if(getTamanhoPadAltura() == 50){
             tempoDoModificadorTamanhoPad--;
             if(tempoDoModificadorTamanhoPad == 0){
                 setTamanhoPadAltura(78); 
-                img.scale(tamanhoPadLargura, tamanhoPadAltura);  
+                img.scale(tamanhoPadLargura, tamanhoPadAltura); 
+                img.setColor(Color.WHITE);
+                img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
             }
         }
     }
@@ -129,7 +133,7 @@ public class Pong extends Actor
     public boolean getStatusBoost(){
         return this.statusBoost;
     }   
-    
+
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
