@@ -16,6 +16,8 @@ public class Jogo extends World
     public Pong pong;
     public Pong2 pong2;
     public go proximoPasso;
+    private boolean iniciarSom = true;
+    GreenfootSound sound = new GreenfootSound("SomMundoJogo.wav");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -27,11 +29,22 @@ public class Jogo extends World
         prepare();
     } 
     
+    public void desligaSom(){
+       sound.stop();
+    }
+    
     public void act()
     {    
         cicloAtual++;
         criadorDeModificador();
         contaCiclo();
+        IniciaSom();
+    }
+    
+    public void IniciaSom(){
+        if(iniciarSom == true){
+        sound.play();
+       }
     }
     
     public boolean oTempoEstaZerado(){
@@ -98,7 +111,7 @@ public class Jogo extends World
         go go = new go();
         addObject(go,354,189);        
     }
-
+    
     public int cicloAtual(){
         return cicloAtual;
     }
