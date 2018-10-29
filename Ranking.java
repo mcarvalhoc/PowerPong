@@ -21,6 +21,10 @@ public class Ranking extends World
         showText("Pontuação", 400, 30);
         sound.play();
     }
+    
+    /*public String NomeJogador(){
+        
+    }*/
 
     /**
      * Prepara o mundo para o início do programa.
@@ -28,7 +32,6 @@ public class Ranking extends World
      */
     private void prepare()
     {
-
         VoltarInicioRanking voltarinicioranking = new VoltarInicioRanking();
         addObject(voltarinicioranking,355,331);
     }
