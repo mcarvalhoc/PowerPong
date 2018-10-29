@@ -37,7 +37,6 @@ public class SpeedUp extends Actor
     }
     
     public void voltaImg(){
-
         if(proximoPasso == 4){
             proximoPasso = 0;
 
