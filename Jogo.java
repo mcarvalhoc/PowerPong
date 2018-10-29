@@ -68,10 +68,9 @@ public class Jogo extends World
     
     public void criadorDeModificadorDeBoost(){
         if(cicloAtual() %  900 == 0 ){
-        int x = Greenfoot.getRandomNumber(560) + 78  ;
-        int y = Greenfoot.getRandomNumber(310) + 40 ;
-        addObject(new ModificadorGanharPowerBoost(), x,y);
-        
+            int x = Greenfoot.getRandomNumber(560) + 78  ;
+            int y = Greenfoot.getRandomNumber(310) + 40 ;
+            addObject(new ModificadorGanharPowerBoost(), x,y);        
        }
     }
     
@@ -84,7 +83,6 @@ public class Jogo extends World
        }
     }
     
-   
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
@@ -140,6 +138,14 @@ public class Jogo extends World
         return cicloAtual;
     }
 
+    public void addPong(){                
+        addObject(new Pong(), 50, 200);
+    }
+    
+    public void addPong2(){                
+        addObject(new Pong2(), 660, 200);
+    }
+    
     public void addBola(){                
         addObject(new Bola(), 351, 190);
     }
@@ -166,5 +172,4 @@ public class Jogo extends World
     public void acrescentaPontosDois(int valor){
         pontuacaoDois.addPontos(valor);        
     }
-
 }
