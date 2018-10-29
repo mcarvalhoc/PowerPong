@@ -25,7 +25,6 @@ public class Pong2 extends Actor
         possoAndarParaBaixo();
         ligarBoost();
         TamanhoNormalPad();
-
     }
 
     public void ModificarTamanhoPad(){
@@ -33,7 +32,6 @@ public class Pong2 extends Actor
         img.scale(tamanhoPadLargura, tamanhoPadAltura);
         img.setColor(Color.RED);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
-
     }   
 
     public void TamanhoNormalPad(){
@@ -44,7 +42,6 @@ public class Pong2 extends Actor
                 img.scale(tamanhoPadLargura, tamanhoPadAltura);
                 img.setColor(Color.WHITE);
                 img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
-
             }
         }
     }
@@ -138,5 +135,4 @@ public class Pong2 extends Actor
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
-
 }   
