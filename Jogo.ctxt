@@ -5,6 +5,7 @@ comment1.params=
 comment1.target=Jogo()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n
 comment10.params=
+<<<<<<< HEAD
 comment10.target=int\ getCiclo()
 comment11.params=valorPartida
 comment11.target=void\ acrescentaPontosPartida(int)
@@ -12,11 +13,25 @@ comment12.params=
 comment12.target=void\ contaCiclo()
 comment13.params=valor
 comment13.target=void\ acrescentaPontosDois(int)
+=======
+comment10.target=void\ addBola()
+comment11.params=valor
+comment11.target=void\ acrescentaPontosUm(int)
+comment12.params=
+comment12.target=int\ getCiclo()
+comment13.params=valorPartida
+comment13.target=void\ acrescentaPontosPartida(int)
+comment14.params=
+comment14.target=void\ contaCiclo()
+comment15.params=valor
+comment15.target=void\ acrescentaPontosDois(int)
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ desligaSom()
 comment3.params=
-comment3.target=boolean\ oTempoEstaZerado()
+comment3.target=void\ act()
 comment4.params=
+<<<<<<< HEAD
 comment4.target=boolean\ tempoQuaseZero()
 comment5.params=
 comment5.target=void\ criadorDeModificador()
@@ -30,3 +45,18 @@ comment8.target=void\ addBola()
 comment9.params=valor
 comment9.target=void\ acrescentaPontosUm(int)
 numComments=14
+=======
+comment4.target=void\ IniciaSom()
+comment5.params=
+comment5.target=boolean\ oTempoEstaZerado()
+comment6.params=
+comment6.target=void\ criadorDeModificadorDeBoost()
+comment7.params=
+comment7.target=void\ criadorDeModificadorTamanhoDePad()
+comment8.params=
+comment8.target=void\ prepare()
+comment8.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment9.params=
+comment9.target=int\ cicloAtual()
+numComments=16
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9

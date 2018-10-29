@@ -7,6 +7,8 @@ import greenfoot.*;
 public class GameOver extends World
 {
     private Integer ciclo = 0;
+    private boolean iniciarSom = true;
+    GreenfootSound sound = new GreenfootSound("SomGameOver.wav");
     /**
      * Constructor for objects of class GameOver.
      */
@@ -17,6 +19,15 @@ public class GameOver extends World
         prepare();
     }
 
+    public void desligaSom(){
+       sound.stop();
+    }
+    
+    public void IniciaSom(){
+        if(iniciarSom == true){
+        sound.play();
+       }
+    }
     /**
      * Prepara o mundo para o início do programa.
      * Ou seja: criar os objetos iniciais e adicioná-los ao mundo.
@@ -39,6 +50,7 @@ public class GameOver extends World
     
     public void act(){
         contaCiclo();
+        IniciaSom();
     }
     
      /**

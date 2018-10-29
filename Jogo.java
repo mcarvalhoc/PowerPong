@@ -16,6 +16,8 @@ public class Jogo extends World
     public Pong pong;
     public Pong2 pong2;
     public go proximoPasso;
+    private boolean iniciarSom = true;
+    GreenfootSound sound = new GreenfootSound("SomMundoJogo.wav");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -26,18 +28,35 @@ public class Jogo extends World
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     } 
+<<<<<<< HEAD
 
+=======
+    
+    public void desligaSom(){
+       sound.stop();
+    }
+    
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
     public void act()
     {    
         cicloAtual++;
-        criadorDeModificador();
+        criadorDeModificadorDeBoost();
+        criadorDeModificadorTamanhoDePad();
         contaCiclo();
+        IniciaSom();
+    }
+    
+    public void IniciaSom(){
+        if(iniciarSom == true){
+        sound.play();
+       }
     }
 
     public boolean oTempoEstaZerado(){
         return this.placartime.valor == 1; 
     }
     
+<<<<<<< HEAD
     public boolean tempoQuaseZero(){
         return this.placartime.valor == 3;
     }
@@ -51,6 +70,9 @@ public class Jogo extends World
 
         }
 
+=======
+    public void criadorDeModificadorDeBoost(){
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
         if(cicloAtual() %  900 == 0 ){
         int x = Greenfoot.getRandomNumber(560) + 78  ;
         int y = Greenfoot.getRandomNumber(310) + 40 ;
@@ -59,7 +81,21 @@ public class Jogo extends World
        }
 
     }
+<<<<<<< HEAD
 
+=======
+    
+    public void criadorDeModificadorTamanhoDePad(){
+        if(cicloAtual() %  1000 == 0 ){
+        int x = Greenfoot.getRandomNumber(560) + 78  ;
+        int y = Greenfoot.getRandomNumber(310) + 40 ;
+        addObject(new  ModificadorDeTamanhoPad(), x,y);
+        
+       }
+    }
+    
+   
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
@@ -113,7 +149,7 @@ public class Jogo extends World
         addObject(speedUp, 354, 189);
 
     }
-
+    
     public int cicloAtual(){
         return cicloAtual;
     }

@@ -51,6 +51,7 @@ class.SpeedUp.superclass=greenfoot.Actor
 class.Time.image=Time.png
 class.Time.superclass=greenfoot.Actor
 class.VoltarInicio.image=Inicio_01.png
+<<<<<<< HEAD
 class.VoltarInicio.superclass=greenfoot.Actor
 class.go.superclass=greenfoot.Actor
 dependency1.from=Pong2
@@ -79,6 +80,36 @@ dependency16.to=ImagemGameOver
 dependency16.type=UsesDependency
 dependency17.from=GameOver
 dependency17.to=Restarte
+=======
+class.VoltarInicioDois.image=Inicio_01.png
+class.VoltarInicioRanking.image=Inicio_01.png
+dependency1.from=Ranking
+dependency1.to=VoltarInicioRanking
+dependency1.type=UsesDependency
+dependency10.from=Jogo
+dependency10.to=PlacarPong2
+dependency10.type=UsesDependency
+dependency11.from=Jogo
+dependency11.to=PlacarMatch
+dependency11.type=UsesDependency
+dependency12.from=Jogo
+dependency12.to=PlacarTime
+dependency12.type=UsesDependency
+dependency13.from=Jogo
+dependency13.to=Pong
+dependency13.type=UsesDependency
+dependency14.from=Jogo
+dependency14.to=Pong2
+dependency14.type=UsesDependency
+dependency15.from=Jogo
+dependency15.to=go
+dependency15.type=UsesDependency
+dependency16.from=Jogo
+dependency16.to=ModificadorGanharPowerBoost
+dependency16.type=UsesDependency
+dependency17.from=Jogo
+dependency17.to=ModificadorDeTamanhoPad
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 dependency17.type=UsesDependency
 dependency18.from=GameOver
 dependency18.to=VoltarInicio
@@ -113,14 +144,24 @@ dependency26.type=UsesDependency
 dependency27.from=Jogo
 dependency27.to=Pong2
 dependency27.type=UsesDependency
+<<<<<<< HEAD
 dependency28.from=Jogo
 dependency28.to=ModificadorGanharPowerBoost
+=======
+dependency28.from=Creditos
+dependency28.to=VoltarInicioDois
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 dependency28.type=UsesDependency
 dependency29.from=Jogo
 dependency29.to=BarraLateral
 dependency29.type=UsesDependency
+<<<<<<< HEAD
 dependency3.from=ImagemGameOver
 dependency3.to=GameOver
+=======
+dependency3.from=Inicio
+dependency3.to=IniciarJogo
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 dependency3.type=UsesDependency
 dependency30.from=Jogo
 dependency30.to=BarraLateral2
@@ -128,6 +169,7 @@ dependency30.type=UsesDependency
 dependency31.from=Jogo
 dependency31.to=Score
 dependency31.type=UsesDependency
+<<<<<<< HEAD
 dependency32.from=Jogo
 dependency32.to=Time
 dependency32.type=UsesDependency
@@ -154,19 +196,48 @@ dependency39.to=SpeedUp
 dependency39.type=UsesDependency
 dependency4.from=BarPowerPong
 dependency4.to=Pong
+=======
+dependency32.from=VoltarInicioDois
+dependency32.to=Inicio
+dependency32.type=UsesDependency
+dependency33.from=VoltarInicioDois
+dependency33.to=Creditos
+dependency33.type=UsesDependency
+dependency34.from=BarPowerPong
+dependency34.to=Pong
+dependency34.type=UsesDependency
+dependency35.from=BarPowerPong
+dependency35.to=Jogo
+dependency35.type=UsesDependency
+dependency36.from=Restarte
+dependency36.to=Jogo
+dependency36.type=UsesDependency
+dependency37.from=Restarte
+dependency37.to=GameOver
+dependency37.type=UsesDependency
+dependency38.from=IniciaCr\u00E9ditos
+dependency38.to=Creditos
+dependency38.type=UsesDependency
+dependency39.from=IniciaCr\u00E9ditos
+dependency39.to=Inicio
+dependency39.type=UsesDependency
+dependency4.from=Inicio
+dependency4.to=IniciaCr\u00E9ditos
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 dependency4.type=UsesDependency
-dependency40.from=IniciaRanking
-dependency40.to=Ranking
+dependency40.from=VoltarInicioRanking
+dependency40.to=Inicio
 dependency40.type=UsesDependency
-dependency41.from=PlacarMatch
-dependency41.to=GameOver
+dependency41.from=VoltarInicioRanking
+dependency41.to=Ranking
 dependency41.type=UsesDependency
-dependency42.from=BarPowerPong2
-dependency42.to=Pong2
+dependency42.from=IniciarJogo
+dependency42.to=Jogo
 dependency42.type=UsesDependency
-dependency43.from=BarPowerPong2
-dependency43.to=Jogo
+dependency43.from=IniciarJogo
+dependency43.to=Inicio
 dependency43.type=UsesDependency
+<<<<<<< HEAD
 dependency44.from=Creditos
 dependency44.to=ImagemCreditos
 dependency44.type=UsesDependency
@@ -223,6 +294,87 @@ mainWindow.x=-7
 mainWindow.y=0
 package.numDependencies=53
 package.numTargets=34
+=======
+dependency44.from=ImagemInicial
+dependency44.to=Inicio
+dependency44.type=UsesDependency
+dependency45.from=go
+dependency45.to=Jogo
+dependency45.type=UsesDependency
+dependency46.from=VoltarInicio
+dependency46.to=Inicio
+dependency46.type=UsesDependency
+dependency47.from=VoltarInicio
+dependency47.to=GameOver
+dependency47.type=UsesDependency
+dependency48.from=IniciaRanking
+dependency48.to=Ranking
+dependency48.type=UsesDependency
+dependency49.from=IniciaRanking
+dependency49.to=Inicio
+dependency49.type=UsesDependency
+dependency5.from=Inicio
+dependency5.to=IniciaRanking
+dependency5.type=UsesDependency
+dependency50.from=PlacarMatch
+dependency50.to=GameOver
+dependency50.type=UsesDependency
+dependency51.from=PlacarMatch
+dependency51.to=Jogo
+dependency51.type=UsesDependency
+dependency52.from=BarPowerPong2
+dependency52.to=Pong2
+dependency52.type=UsesDependency
+dependency53.from=BarPowerPong2
+dependency53.to=Jogo
+dependency53.type=UsesDependency
+dependency54.from=Bola
+dependency54.to=Jogo
+dependency54.type=UsesDependency
+dependency55.from=Bola
+dependency55.to=Pong
+dependency55.type=UsesDependency
+dependency56.from=Bola
+dependency56.to=Pong2
+dependency56.type=UsesDependency
+dependency57.from=Bola
+dependency57.to=ModificadorGanharPowerBoost
+dependency57.type=UsesDependency
+dependency58.from=Bola
+dependency58.to=ModificadorDeTamanhoPad
+dependency58.type=UsesDependency
+dependency59.from=Bola
+dependency59.to=BarraLateral
+dependency59.type=UsesDependency
+dependency6.from=GameOver
+dependency6.to=ImagemGameOver
+dependency6.type=UsesDependency
+dependency60.from=Bola
+dependency60.to=BarraLateral2
+dependency60.type=UsesDependency
+dependency61.from=PlacarTime
+dependency61.to=Jogo
+dependency61.type=UsesDependency
+dependency62.from=Pong
+dependency62.to=BarraLateral2
+dependency62.type=UsesDependency
+dependency7.from=GameOver
+dependency7.to=Restarte
+dependency7.type=UsesDependency
+dependency8.from=GameOver
+dependency8.to=VoltarInicio
+dependency8.type=UsesDependency
+dependency9.from=Jogo
+dependency9.to=PlacarPong1
+dependency9.type=UsesDependency
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=1500
+editor.fx.0.y=101
+height=1026
+package.numDependencies=62
+package.numTargets=35
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -236,7 +388,11 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
 simulation.speed=49
+=======
+simulation.speed=48
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target1.height=50
 target1.name=BarraLateral2
 target1.showInterface=false
@@ -246,51 +402,72 @@ target1.width=90
 target1.x=0
 target1.y=0
 target10.height=50
-target10.name=PlacarTimeDois
+target10.name=Inicio
 target10.naviview.expanded=false
 target10.showInterface=false
 target10.type=ClassTarget
+<<<<<<< HEAD
 target10.typeParameters=
 target10.width=100
+=======
+target10.width=80
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target10.x=0
 target10.y=0
 target11.height=50
-target11.name=Restarte
+target11.name=PlacarTimeDois
+target11.naviview.expanded=false
 target11.showInterface=false
 target11.type=ClassTarget
+<<<<<<< HEAD
 target11.typeParameters=
 target11.width=80
+=======
+target11.width=100
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target11.x=0
 target11.y=0
 target12.height=50
-target12.name=IniciaCr\u00E9ditos
+target12.name=Restarte
 target12.showInterface=false
 target12.type=ClassTarget
+<<<<<<< HEAD
 target12.typeParameters=
 target12.width=100
+=======
+target12.width=80
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target12.x=0
 target12.y=0
 target13.height=50
-target13.name=PlacarPong1
+target13.name=IniciaCr\u00E9ditos
 target13.naviview.expanded=true
 target13.showInterface=false
 target13.type=ClassTarget
+<<<<<<< HEAD
 target13.typeParameters=
 target13.width=90
+=======
+target13.width=100
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target13.x=0
 target13.y=0
 target14.height=50
-target14.name=PlacarPong2
+target14.name=VoltarInicioRanking
 target14.naviview.expanded=true
 target14.showInterface=false
 target14.type=ClassTarget
+<<<<<<< HEAD
 target14.typeParameters=
 target14.width=90
+=======
+target14.width=130
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target14.x=0
 target14.y=0
 target15.height=50
-target15.name=BarraCentral
-target15.naviview.expanded=false
+target15.name=PlacarPong1
+target15.naviview.expanded=true
 target15.showInterface=false
 target15.type=ClassTarget
 target15.typeParameters=
@@ -298,8 +475,8 @@ target15.width=90
 target15.x=0
 target15.y=0
 target16.height=50
-target16.name=ImagemFinal
-target16.naviview.expanded=false
+target16.name=PlacarPong2
+target16.naviview.expanded=true
 target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
@@ -307,6 +484,7 @@ target16.width=90
 target16.x=0
 target16.y=0
 target17.height=50
+<<<<<<< HEAD
 target17.name=SpeedUp
 target17.naviview.expanded=true
 target17.showInterface=false
@@ -331,6 +509,28 @@ target19.showInterface=false
 target19.type=ClassTarget
 target19.typeParameters=
 target19.width=80
+=======
+target17.name=BarraCentral
+target17.naviview.expanded=false
+target17.showInterface=false
+target17.type=ClassTarget
+target17.width=90
+target17.x=0
+target17.y=0
+target18.height=50
+target18.name=ImagemFinal
+target18.naviview.expanded=false
+target18.showInterface=false
+target18.type=ClassTarget
+target18.width=90
+target18.x=0
+target18.y=0
+target19.height=50
+target19.name=ModificadorDeTamanhoPad
+target19.showInterface=false
+target19.type=ClassTarget
+target19.width=170
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target19.x=0
 target19.y=0
 target2.height=50
@@ -342,7 +542,11 @@ target2.width=80
 target2.x=0
 target2.y=0
 target20.height=50
+<<<<<<< HEAD
 target20.name=ImagemInicial
+=======
+target20.name=IniciarJogo
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target20.naviview.expanded=true
 target20.showInterface=false
 target20.type=ClassTarget
@@ -351,8 +555,13 @@ target20.width=100
 target20.x=0
 target20.y=0
 target21.height=50
+<<<<<<< HEAD
 target21.name=go
 target21.naviview.expanded=false
+=======
+target21.name=GameOver
+target21.naviview.expanded=true
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target21.showInterface=false
 target21.type=ClassTarget
 target21.typeParameters=
@@ -360,6 +569,7 @@ target21.width=80
 target21.x=0
 target21.y=0
 target22.height=50
+<<<<<<< HEAD
 target22.name=VoltarInicio
 target22.naviview.expanded=true
 target22.showInterface=false
@@ -370,6 +580,17 @@ target22.x=0
 target22.y=0
 target23.height=50
 target23.name=ModificadorGanharPowerBoost
+=======
+target22.name=ImagemInicial
+target22.naviview.expanded=true
+target22.showInterface=false
+target22.type=ClassTarget
+target22.width=100
+target22.x=0
+target22.y=0
+target23.height=50
+target23.name=go
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target23.naviview.expanded=false
 target23.showInterface=false
 target23.type=ClassTarget
@@ -377,16 +598,25 @@ target23.typeParameters=
 target23.width=190
 target23.x=0
 target23.y=0
+<<<<<<< HEAD
 target24.height=62
 target24.name=PowerPong
 target24.naviview.expanded=false
 target24.showInterface=false
 target24.type=PackageTarget
 target24.typeParameters=
+=======
+target24.height=50
+target24.name=VoltarInicio
+target24.naviview.expanded=true
+target24.showInterface=false
+target24.type=ClassTarget
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target24.width=80
 target24.x=0
 target24.y=0
 target25.height=50
+<<<<<<< HEAD
 target25.name=Jogo
 target25.naviview.expanded=false
 target25.showInterface=false
@@ -429,6 +659,45 @@ target29.showInterface=false
 target29.type=ClassTarget
 target29.typeParameters=
 target29.width=110
+=======
+target25.name=ModificadorGanharPowerBoost
+target25.naviview.expanded=false
+target25.showInterface=false
+target25.type=ClassTarget
+target25.width=190
+target25.x=0
+target25.y=0
+target26.height=50
+target26.name=Jogo
+target26.naviview.expanded=false
+target26.showInterface=false
+target26.type=ClassTarget
+target26.width=80
+target26.x=0
+target26.y=0
+target27.height=50
+target27.name=IniciaRanking
+target27.naviview.expanded=false
+target27.showInterface=false
+target27.type=ClassTarget
+target27.width=90
+target27.x=0
+target27.y=0
+target28.height=50
+target28.name=Score
+target28.naviview.expanded=false
+target28.showInterface=false
+target28.type=ClassTarget
+target28.width=80
+target28.x=0
+target28.y=0
+target29.height=50
+target29.name=PlacarMatch
+target29.naviview.expanded=false
+target29.showInterface=false
+target29.type=ClassTarget
+target29.width=90
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target29.x=0
 target29.y=0
 target3.height=50
@@ -440,15 +709,23 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=50
+<<<<<<< HEAD
 target30.name=BarPowerPong2
 target30.naviview.expanded=true
 target30.showInterface=false
 target30.type=ClassTarget
 target30.typeParameters=
+=======
+target30.name=ImagemCreditos
+target30.naviview.expanded=true
+target30.showInterface=false
+target30.type=ClassTarget
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target30.width=110
 target30.x=0
 target30.y=0
 target31.height=50
+<<<<<<< HEAD
 target31.name=Creditos
 target31.naviview.expanded=true
 target31.showInterface=false
@@ -459,6 +736,17 @@ target31.x=0
 target31.y=0
 target32.height=50
 target32.name=Bola
+=======
+target31.name=BarPowerPong2
+target31.naviview.expanded=true
+target31.showInterface=false
+target31.type=ClassTarget
+target31.width=110
+target31.x=0
+target31.y=0
+target32.height=50
+target32.name=Creditos
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target32.naviview.expanded=true
 target32.showInterface=false
 target32.type=ClassTarget
@@ -467,15 +755,23 @@ target32.width=80
 target32.x=0
 target32.y=0
 target33.height=50
+<<<<<<< HEAD
 target33.name=PlacarTime
 target33.naviview.expanded=true
 target33.showInterface=false
 target33.type=ClassTarget
 target33.typeParameters=
+=======
+target33.name=Bola
+target33.naviview.expanded=true
+target33.showInterface=false
+target33.type=ClassTarget
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target33.width=80
 target33.x=0
 target33.y=0
 target34.height=50
+<<<<<<< HEAD
 target34.name=Pong
 target34.showInterface=false
 target34.type=ClassTarget
@@ -483,6 +779,22 @@ target34.typeParameters=
 target34.width=80
 target34.x=0
 target34.y=0
+=======
+target34.name=PlacarTime
+target34.naviview.expanded=true
+target34.showInterface=false
+target34.type=ClassTarget
+target34.width=80
+target34.x=0
+target34.y=0
+target35.height=50
+target35.name=Pong
+target35.showInterface=false
+target35.type=ClassTarget
+target35.width=80
+target35.x=0
+target35.y=0
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target4.height=50
 target4.name=Time
 target4.naviview.expanded=false
@@ -493,40 +805,56 @@ target4.width=80
 target4.x=0
 target4.y=0
 target5.height=50
-target5.name=Match
+target5.name=VoltarInicioDois
 target5.showInterface=false
 target5.type=ClassTarget
+<<<<<<< HEAD
 target5.typeParameters=
 target5.width=80
+=======
+target5.width=110
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target5.x=0
 target5.y=0
 target6.height=50
-target6.name=BarPowerPong
+target6.name=Match
 target6.showInterface=false
 target6.type=ClassTarget
+<<<<<<< HEAD
 target6.typeParameters=
 target6.width=100
+=======
+target6.width=80
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target6.x=0
 target6.y=0
 target7.height=50
-target7.name=BarraLateral
+target7.name=BarPowerPong
 target7.showInterface=false
 target7.type=ClassTarget
+<<<<<<< HEAD
 target7.typeParameters=
 target7.width=90
+=======
+target7.width=100
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target7.x=0
 target7.y=0
 target8.height=50
-target8.name=Ranking
+target8.name=BarraLateral
 target8.naviview.expanded=false
 target8.showInterface=false
 target8.type=ClassTarget
+<<<<<<< HEAD
 target8.typeParameters=
 target8.width=80
+=======
+target8.width=90
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 target8.x=0
 target8.y=0
 target9.height=50
-target9.name=Inicio
+target9.name=Ranking
 target9.naviview.expanded=false
 target9.showInterface=false
 target9.type=ClassTarget
@@ -536,6 +864,10 @@ target9.x=0
 target9.y=0
 version=3.0.0
 width=1696
+<<<<<<< HEAD
 world.lastInstantiated=Inicio
+=======
+world.lastInstantiated=Ranking
+>>>>>>> 9014049ad2aec6e6b462067aeb32fd2100c09be9
 xPosition=-8
 yPosition=-8
