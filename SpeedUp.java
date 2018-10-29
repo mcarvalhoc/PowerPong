@@ -15,8 +15,8 @@ public class SpeedUp extends Actor
     public void act()
     {
         trocaImg1();
-        voltaImg();
         trocaImg2();
+        trocaImg3();
         voltaImg();
     }
     
@@ -36,8 +36,16 @@ public class SpeedUp extends Actor
         }
     }
     
+    public void trocaImg3(){
+        setImage(new GreenfootImage("SpeedUp_"+proximoPasso+".png"));
+        Jogo mundo = getWorldOfType(Jogo.class);
+        if(mundo.tempoBaixo()){
+            proximoPasso = proximoPasso + 1;
+        }
+    }
+    
     public void voltaImg(){
-        if(proximoPasso == 4){
+        if(proximoPasso == 3){
             proximoPasso = 0;
 
         }

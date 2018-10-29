@@ -6,6 +6,7 @@ import greenfoot.*;
  */
 public class Ranking extends World
 {
+    GreenfootSound sound = new GreenfootSound("SomRanking.wav");
     /**
      * Constructor for objects of class Ranking.
      */
@@ -18,6 +19,7 @@ public class Ranking extends World
     public void act(){
         showText("Nome Jogador", 200, 30);
         showText("Pontuação", 400, 30);
+        sound.play();
     }
 
     /**
@@ -26,7 +28,12 @@ public class Ranking extends World
      */
     private void prepare()
     {
-        VoltarInicio voltarinicio2 = new VoltarInicio();
-        addObject(voltarinicio2,299,270);
+
+        VoltarInicioRanking voltarinicioranking = new VoltarInicioRanking();
+        addObject(voltarinicioranking,355,331);
+    }
+    
+    public void desligaSom(){
+       sound.stop();
     }
 }

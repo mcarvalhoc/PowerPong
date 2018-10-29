@@ -26,8 +26,13 @@ public class go extends Actor
             proximoPasso++;
         }
 
+        /*if(proximoPasso == 1){
+            Greenfoot.playSound("ContadorGo");
+        }*/
+        
         if(proximoPasso > 5){
             proximoPasso = 5;
         }
+        
     }
 }
