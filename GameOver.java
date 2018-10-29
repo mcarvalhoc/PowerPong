@@ -16,7 +16,6 @@ public class GameOver extends World
     public GameOver()
     {
         super(700, 390, 1);
-
         prepare();
     }
 

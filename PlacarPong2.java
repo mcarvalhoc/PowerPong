@@ -9,14 +9,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlacarPong2 extends Actor
 {
     private int pontuacaoDois = 0; 
-
+    GameOver World =(GameOver) getWorld();
     public PlacarPong2(){
         atualizaImagem(pontuacaoDois);
     }
 
     public void addPontos(int valor){
         pontuacaoDois +=valor; 
+            if(pontuacaoDois >= 5){
+            saiSom();
+            Greenfoot.setWorld( new  GameOver());
+       }
     }
+    
+     public void saiSom()
+    {
+        Jogo World =(Jogo) getWorld();
+        World.desligaSom();
+        }
 
     /**
      * Act - do whatever the Placar wants to do. This method is called whenever
@@ -32,7 +42,7 @@ public class PlacarPong2 extends Actor
         setImage(Pong1);
     }
 
-   private String converteNumero(int valor){
+    private String converteNumero(int valor){
        return String.format("%02d",valor);
-    }
+     }
 }

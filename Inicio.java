@@ -4,7 +4,7 @@ public class Inicio extends World
 {
     private Integer ciclo = 0;
     private ImagemInicial imagemInicial = null;
-    GreenfootSound sound = new GreenfootSound("SomMario.wav");
+    GreenfootSound sound = new GreenfootSound("ErroWindo.wav");
    
     public Inicio()
     {
