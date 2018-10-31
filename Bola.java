@@ -63,7 +63,6 @@ public class Bola extends Actor
         }
     }
 
-
     public void movimentoBola(){
         if(controle){
             int newX = getX() + hDirection * speed;

@@ -5,6 +5,7 @@ public class PlacarPong2 extends Actor
     GameOver World =(GameOver) getWorld();
     public PlacarPong2(){
         atualizaImagem(pontuacaoDois);
+        
     }
 
     public void addPontos(int valor){

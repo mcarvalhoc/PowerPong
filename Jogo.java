@@ -5,6 +5,8 @@ public class Jogo extends World
     private PlacarPong1 pontuacaoUm;
     private PlacarPong2 pontuacaoDois;
     private PlacarMatch numeroPartidas;
+    private GameOver pontuacaoUmG;
+    private GameOver pontuacaoDoisG;
     private Integer ciclo = 0;
     public PlacarTime placartime;
     public Pong pong;
@@ -172,8 +174,8 @@ public class Jogo extends World
     {
         ciclo = ciclo + 1;
     }
-
+    
     public void acrescentaPontosDois(int valor){
-        pontuacaoDois.addPontos(valor);        
+        pontuacaoDois.addPontos(valor);     
     }
 }

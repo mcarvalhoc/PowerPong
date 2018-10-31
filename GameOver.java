@@ -4,7 +4,6 @@ import greenfoot.*;
 public class GameOver extends World
 {
     private Integer ciclo = 0;
-    private JogadorUmVence jogadorUmVence;
     private boolean iniciarSom = true;
     GreenfootSound sound = new GreenfootSound("SomGameOver.wav");
     public GameOver()
@@ -44,15 +43,14 @@ public class GameOver extends World
         contaCiclo();
         IniciaSom();
     }
-    
-    public void addImgVencUM(){                
+  
+    public void addImgVencUm(){                
         addObject(new JogadorUmVence(), 351, 190);
     }
-   
-    /*public void addImgPongUm(){
-     Jogo World =(Jogo) getWorld();
-     World.acrescentaPontosUm(int valor);
-    }*/
+    
+     public void addImgVencDois(){                
+        addObject(new JogadorDoisVence(), 351, 190);
+    }
     
     public void contaCiclo()
     {
@@ -62,8 +60,9 @@ public class GameOver extends World
         }
     }
 
-    public int getCiclo()
-    {
-        return ciclo;
+    public int getCiclo(){
+        {
+            return ciclo;
+        }
     }
 }

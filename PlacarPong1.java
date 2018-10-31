@@ -12,6 +12,7 @@ public class PlacarPong1 extends Actor
          if(pontuacaoUm >= 5){
             saiSom();
             Greenfoot.setWorld( new  GameOver());
+            World.addImgVencUm();
        }
     }
 
